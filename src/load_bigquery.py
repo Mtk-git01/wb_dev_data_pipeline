@@ -19,6 +19,17 @@ def upload_to_bigquery(df, project_id: str, dataset_id: str, table_id: str) -> N
         "decimal_places": "INTEGER",
         "source_name": "STRING",
         "load_timestamp": "TIMESTAMP",
+
+        "reporter_name": "STRING",
+        "reporter_iso3": "STRING",
+        "hs_code": "STRING",
+        "hs_label": "STRING",
+        "flow_code": "STRING",
+        "flow_name": "STRING",
+        "partner_code": "STRING",
+        "partner_name": "STRING",
+        "trade_value_usd": "FLOAT",
+        "net_weight_kg": "FLOAT",
     }
 
     schema = []
