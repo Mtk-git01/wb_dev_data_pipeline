@@ -15,6 +15,7 @@ Current implemented pipelines:
 
 - **Under-five mortality (U5MR)** from **UN-IGME**
 - **Girls’ primary completion rate** from the **World Bank API**
+- **Trade flows** from **UN Comtrade**
 
 ---
 
@@ -24,9 +25,10 @@ This project is designed to demonstrate:
 - source-oriented data extraction
 - reproducible ETL design
 - country-year data modeling
-- data lineage awareness
+- explicit data lineage awareness
 - validation before loading
 - cloud-ready analytical storage in BigQuery
+- the ability to transform source statistical inputs into curated analytical assets
 
 ---
 
@@ -104,6 +106,91 @@ Two BigQuery tables are created:
 
 ---
 
+### 3) Trade pipeline
+This repository also includes a trade-data workflow built from **UN Comtrade**, chosen as a more source-oriented and raw-data-near input for international merchandise trade analysis.
+
+This reflects a deliberate **data lineage** choice:
+- instead of relying only on downstream summary tables
+- the workflow retrieves trade records from **UN Comtrade**
+- and transforms them into analysis-ready country-year trade tables for downstream statistical use
+
+#### Why UN Comtrade
+UN Comtrade is treated here as a **primary-data-near trade source** for internationally reported merchandise trade flows.  
+Using this source makes it possible to work closer to the original reporting structure of trade statistics before transforming them into curated analytical tables.
+
+This is important for:
+- traceable data lineage
+- source transparency
+- reproducible extraction logic
+- consistent transformation into country-year statistical assets
+
+#### Current trade scope
+The current implementation focuses on a small, interpretable set of country-product-flow combinations chosen to support development-oriented analysis.
+
+**Luxury goods / high-end consumption proxy**
+- Jewellery imports
+  - Japan
+  - Kazakhstan
+
+**Developing-country-origin commodity exports**
+- Coffee exports
+  - Brazil
+  - Ghana
+- Cocoa exports
+  - Brazil
+  - Ghana
+
+This design allows the trade module to capture both:
+- **high-value consumption-oriented trade**
+- **commodity exports linked to developing-country production structures**
+
+#### Trade transformations
+The trade workflow:
+- retrieves annual trade data from UN Comtrade
+- keeps the extraction layer relatively close to the raw source structure
+- selects essential reporting fields for analytical use
+- standardizes outputs into country-year records
+- loads curated outputs into BigQuery
+
+The curated trade tables use:
+- `primaryValue` from source data as `trade_value_usd`
+- `netWgt` from source data as `net_weight_kg`
+
+#### Why this matters analytically
+This trade pipeline is designed not as a standalone trade exercise, but as a module that can be joined with other development indicators already included in the repository, such as:
+
+- under-five mortality (U5MR)
+- girls’ primary completion rate
+- future extensions such as fertility, GDP per capita, and ODA-related indicators
+
+This makes it possible to study development-relevant relationships between:
+- export structure and human development
+- commodity dependence and social indicators
+- high-end import exposure and economic development level
+- trade patterns and broader country trajectories
+
+#### Trade output tables
+BigQuery tables:
+- `worldbank01.wb_dev_stats.trade_country_year_long`
+- `worldbank01.wb_dev_stats.trade_country_latest`
+
+#### Main columns
+- `reporter_name`
+- `reporter_iso3`
+- `year`
+- `hs_code`
+- `hs_label`
+- `flow_code`
+- `flow_name`
+- `partner_code`
+- `partner_name`
+- `trade_value_usd`
+- `net_weight_kg`
+- `source_name`
+- `load_timestamp`
+
+---
+
 ## Validation vs testing
 
 ### Validation
@@ -115,6 +202,7 @@ Examples:
 - null `year`
 - duplicate country-year rows
 - null-heavy value columns
+- unusual year ranges
 
 Validation returns:
 - **errors** → stop the pipeline
@@ -127,6 +215,7 @@ Examples:
 - interpolation behaves correctly
 - annualization logic works correctly
 - latest-value extraction returns the correct row
+- trade transformation returns the expected country-year record
 
 Tests are implemented with `pytest`.
 
@@ -156,17 +245,22 @@ wb_dev_data_pipeline/
 │   ├── main_girls_primary_completion.py
 │   ├── extract_girls_primary_completion.py
 │   ├── transform_girls_primary_completion.py
+│   ├── main_trade.py
+│   ├── extract_trade.py
+│   ├── transform_trade.py
 │   ├── validate.py
 │   ├── load_bigquery.py
 │   └── config.py
 ├── tests/
 │   ├── __init__.py
 │   ├── test_transform_u5mr.py
-│   └── test_transform_girls_primary_completion.py
+│   ├── test_transform_girls_primary_completion.py
+│   └── test_transform_trade.py
 ├── sql/
 │   ├── create_dataset.sql
 │   ├── create_tables_u5mr.sql
 │   ├── create_tables_girls_primary_completion.sql
+│   ├── create_tables_trade.sql
 │   └── sample_queries.sql
 ├── outputs/
 │   ├── charts/
