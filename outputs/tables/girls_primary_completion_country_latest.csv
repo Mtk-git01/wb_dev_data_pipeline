@@ -1,0 +1,197 @@
+country_name,country_iso,year,value,indicator_code,indicator_name,obs_status,decimal_places,source_name,load_timestamp
+Aruba,ABW,2022,91.9629135131836,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Afghanistan,AFG,2019,69.6135025024414,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Angola,AGO,2023,48.8188844332553,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Albania,ALB,2024,107.245338439941,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Andorra,AND,2024,65.1948051948052,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+United Arab Emirates,ARE,2023,100.922786638757,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Argentina,ARG,2023,99.9205861634904,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Armenia,ARM,2024,96.5918451400329,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Antigua and Barbuda,ATG,2022,104.560260586319,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Austria,AUT,2023,97.8916397094727,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Azerbaijan,AZE,2024,96.2267616536125,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Burundi,BDI,2020,51.2740227461352,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Benin,BEN,2022,59.0801391601562,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Burkina Faso,BFA,2024,57.3743968752393,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Bangladesh,BGD,2024,102.827558269358,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Bulgaria,BGR,2023,94.2019729614258,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Bahrain,BHR,2024,94.6323456051082,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Bahamas, The",BHS,2019,88.4073291050035,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Bosnia and Herzegovina,BIH,2023,101.988983154297,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Belarus,BLR,2024,96.1806824311392,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Belize,BLZ,2024,96.4178288214383,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Bermuda,BMU,2013,103.519058227539,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Bolivia,BOL,2023,96.3125288628264,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Barbados,BRB,2024,89.1156462585034,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Brunei Darussalam,BRN,2023,103.460429349567,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Bhutan,BTN,2024,94.8323365276197,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Botswana,BWA,2022,103.523393019226,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Central African Republic,CAF,2016,31.167989730835,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Canada,CAN,2000,98.2839584350586,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Switzerland,CHE,2023,98.6177215576172,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Chile,CHL,2023,99.1959381103516,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+China,CHN,2010,103.93893921564,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Cote d'Ivoire,CIV,2024,80.8235371900826,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Cameroon,CMR,2024,72.4090367147951,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Congo, Dem. Rep.",COD,2023,72.9184494018555,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Congo, Rep.",COG,2023,71.0258407592773,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Colombia,COL,2022,96.7505111694336,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Comoros,COM,2024,73.5352532274081,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Cabo Verde,CPV,2022,100.083177375754,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Costa Rica,CRI,2023,101.239471435547,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Cuba,CUB,2024,91.972846128059,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Cayman Islands,CYM,2024,108.753315649867,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Cyprus,CYP,2023,100.083320617676,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Czechia,CZE,2023,97.928108215332,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Germany,DEU,2023,99.262580871582,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Dominica,DMA,2025,89.8345153664303,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Denmark,DNK,2023,99.2147216796875,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Dominican Republic,DOM,2024,90.6907067002175,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Algeria,DZA,2025,97.3363003119852,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Ecuador,ECU,2023,101.454909431404,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Egypt, Arab Rep.",EGY,2024,98.515314190662,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Eritrea,ERI,2022,55.7502517700195,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Spain,ESP,2023,99.3330383300781,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Estonia,EST,2023,97.3661193847656,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Ethiopia,ETH,2024,54.2277519458608,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Finland,FIN,2023,98.8705368041992,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Fiji,FJI,2024,113.788583005601,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Micronesia, Fed. Sts.",FSM,2024,82.5900508500205,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Gabon,GAB,2003,68.6296463012695,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+United Kingdom,GBR,2023,101.342178344727,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Georgia,GEO,2024,102.934502519134,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Ghana,GHA,2022,93.1138641543713,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Gibraltar,GIB,2024,96.0869565217391,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Guinea,GIN,2020,52.7255096435547,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Gambia, The",GMB,2025,93.1375003477148,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Guinea-Bissau,GNB,2010,55.8166389465332,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Equatorial Guinea,GNQ,2015,34.06787109375,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Greece,GRC,2023,99.6333618164062,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Grenada,GRD,2024,94.6072684642438,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Guatemala,GTM,2024,87.7571641371264,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Guyana,GUY,2012,103.259485612427,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Hong Kong SAR, China",HKG,2024,90.7207792207792,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Honduras,HND,2024,73.8600429902078,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Croatia,HRV,2023,100.189788818359,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Haiti,HTI,1997,50.467170715332,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Hungary,HUN,2023,96.2929229736328,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Indonesia,IDN,2023,98.7919848769697,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+India,IND,2024,95.1962200407252,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Ireland,IRL,2022,98.0181427001953,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Iran, Islamic Rep.",IRN,2020,96.4236679077148,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Iraq,IRQ,2007,53.6813011169434,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Iceland,ISL,2023,98.354736328125,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Israel,ISR,2023,96.6069412231445,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Italy,ITA,2023,97.3714828491211,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Jamaica,JAM,2023,81.7641894334556,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Jordan,JOR,2024,97.7712767145314,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Kazakhstan,KAZ,2025,97.3191086112555,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Kenya,KEN,2016,102.120621246956,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Kyrgyz Republic,KGZ,2025,95.6622559937115,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Cambodia,KHM,2024,93.158438165852,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Kiribati,KIR,2024,88.3322346736981,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+St. Kitts and Nevis,KNA,2023,115.161290322581,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Korea, Rep.",KOR,2023,98.3970489501953,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Kuwait,KWT,2021,91.2533091821095,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Lao PDR,LAO,2025,85.5500907393283,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Lebanon,LBN,2023,68.6275558407758,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Liberia,LBR,2022,59.0168038762316,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Libya,LBY,1983,86.0601501464844,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+St. Lucia,LCA,2024,101.350048216008,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Liechtenstein,LIE,2021,94.7089920043945,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Sri Lanka,LKA,2023,95.4405576953458,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Lesotho,LSO,2023,71.8688888549805,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Lithuania,LTU,2023,106.024848937988,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Luxembourg,LUX,2023,79.3341293334961,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Latvia,LVA,2023,97.859733581543,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Macao SAR, China",MAC,2024,93.9090909090909,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Morocco,MAR,2024,107.066613774374,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Monaco,MCO,2024,136.25,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Moldova,MDA,2024,107.758210376011,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Madagascar,MDG,2024,63.7169332056689,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Maldives,MDV,2024,98.1236203090508,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Mexico,MEX,2023,103.853820800781,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Marshall Islands,MHL,2024,97.3799117512899,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+North Macedonia,MKD,2023,95.234489440918,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Mali,MLI,2023,47.1437278810836,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Malta,MLT,2023,97.0448532104492,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Myanmar,MMR,2018,106.806716918945,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Montenegro,MNE,2023,108.663726806641,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Mongolia,MNG,2024,94.6623652591417,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Mozambique,MOZ,2022,68.5622903502613,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Mauritania,MRT,2020,74.549923715884,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Mauritius,MUS,2024,83.1743666169896,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Malawi,MWI,2024,74.4729558767768,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Malaysia,MYS,2024,89.8850736172053,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Namibia,NAM,2024,90.3999512333193,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+New Caledonia,NCL,1990,95.9020767211914,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Niger,NER,2024,40.5937174434932,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Nigeria,NGA,2010,65.5177993774414,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Nicaragua,NIC,2022,82.9418716430664,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Norway,NOR,2023,98.7587280273438,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Nepal,NPL,2025,108.865183274843,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Nauru,NRU,2025,92.6666629844243,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Oman,OMN,2022,86.8265162200282,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Pakistan,PAK,2024,72.8515927841691,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Panama,PAN,2023,93.2820677133397,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Peru,PER,2019,94.7819595336914,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Philippines,PHL,2024,90.9169158208013,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Palau,PLW,2023,84.3478260869565,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Papua New Guinea,PNG,2023,81.2337930941439,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Poland,POL,2023,103.955978393555,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Puerto Rico (US),PRI,2024,83.0453997589393,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Korea, Dem. People's Rep.",PRK,2009,96.5169677734375,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Portugal,PRT,2023,104.439636230469,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Paraguay,PRY,2024,88.3006694088233,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+West Bank and Gaza,PSE,2023,90.2623635244117,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+French Polynesia,PYF,1983,58.9985809326172,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Qatar,QAT,2022,95.5404561074664,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Romania,ROU,2023,81.0031204223633,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Russian Federation,RUS,2019,99.6756547069578,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Rwanda,RWA,2024,73.3082470994042,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Saudi Arabia,SAU,2024,99.6507545056052,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Sudan,SDN,2019,59.6943588256836,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Senegal,SEN,2024,73.8853415025744,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Singapore,SGP,2023,96.6836866264377,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Solomon Islands,SLB,2024,71.9133189489138,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Sierra Leone,SLE,2024,101.753880713072,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+El Salvador,SLV,2024,84.2287312334413,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+San Marino,SMR,2024,94.5945945945946,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Serbia,SRB,2022,96.3893585205078,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+South Sudan,SSD,2011,20.1983509063721,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Sao Tome and Principe,STP,2017,87.1888732910156,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Suriname,SUR,2021,80.3161163330078,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Slovak Republic,SVK,2023,99.7906036376953,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Slovenia,SVN,2023,96.8288269042969,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Sweden,SWE,2023,99.5945510864258,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Eswatini,SWZ,2023,95.2706812652068,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Sint Maarten (Dutch part),SXM,2014,124.124513618677,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Seychelles,SYC,2024,93.8480072021484,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Syrian Arab Republic,SYR,2024,61.3747787475586,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Turks and Caicos Islands,TCA,2024,135.856573705179,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Chad,TCD,2021,36.261110215031,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Togo,TGO,2024,90.9533532275797,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Thailand,THA,2025,106.242303607168,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Tajikistan,TJK,2017,89.481071472168,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Timor-Leste,TLS,2023,93.2543176430748,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Tonga,TON,2024,109.847198641766,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Trinidad and Tobago,TTO,2023,92.5850601196289,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Tunisia,TUN,2021,96.189079284668,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Turkiye,TUR,2022,101.571060180664,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Tuvalu,TUV,2024,108.247422680412,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Tanzania,TZA,2024,83.9594953960084,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Uganda,UGA,2017,53.9600982666016,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Ukraine,UKR,2021,89.7791983702214,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Uruguay,URY,2023,101.613761305196,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+United States,USA,2022,94.0673522949219,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Uzbekistan,UZB,2025,83.0584947331648,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+St. Vincent and the Grenadines,VCT,2023,110.013000488281,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Venezuela, RB",VEN,2024,105.259880065918,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+British Virgin Islands,VGB,2024,53.9603996276855,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Viet Nam,VNM,2024,98.7009296425694,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Vanuatu,VUT,2024,113.153058092261,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Samoa,WSM,2024,98.3935713509141,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+"Yemen, Rep.",YEM,2016,53.8736686706543,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+South Africa,ZAF,2023,94.4951500096113,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Zambia,ZMB,2013,79.768996767856,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00
+Zimbabwe,ZWE,2024,87.9571987866817,SE.PRM.CMPT.FE.ZS,"Primary completion rate, female (% of relevant age group)",,0,World Bank API,2026-03-17 14:32:12.086635+00:00

@@ -3,7 +3,8 @@ from pathlib import Path
 from src.config import PROJECT_ID, DATASET_ID, U5MR_TABLE_ID, U5MR_URL
 from src.extract_u5mr import load_u5mr_data
 from src.transform_u5mr import prepare_all_countries_u5mr
-from src.load_bigquery import upload_u5mr_to_bigquery
+from src.load_bigquery import upload_to_bigquery
+from src.validate import validate_country_year_table, print_validation_results
 
 
 def main() -> None:
@@ -20,7 +21,13 @@ def main() -> None:
     final_df.to_csv(output_path, index=False)
     print(f"Saved local CSV: {output_path}")
 
-    upload_u5mr_to_bigquery(
+    errors, warnings = validate_country_year_table(final_df)
+    print_validation_results(errors, warnings, "u5mr_country_year")
+
+    if errors:
+        raise ValueError("Validation failed for u5mr_country_year")
+
+    upload_to_bigquery(
         final_df,
         project_id=PROJECT_ID,
         dataset_id=DATASET_ID,
