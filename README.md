@@ -49,3 +49,10 @@ wb_dev_data_pipeline/
 └── .github/
     └── workflows/
         └── ci.yml
+
+## Tables  
+- source: UN-IGME observational database  
+- one record per country-year  
+- linear interpolation applied to missing years
+- is_interpolated flag included
+- loaded into BigQuery
