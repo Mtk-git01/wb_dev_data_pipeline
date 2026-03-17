@@ -1,1 +1,0 @@
-CREATE SCHEMA IF NOT EXISTS `worldbank01.wb_dev_stats`;

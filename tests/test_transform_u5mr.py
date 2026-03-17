@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.transform import prepare_country_year_u5mr
+from src.transform_u5mr import prepare_country_year_u5mr
 
 
 def test_prepare_country_year_u5mr_interpolates_missing_years():

@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from src.config import PROJECT_ID, DATASET_ID, TABLE_ID, U5MR_URL
-from src.extract import load_u5mr_data
-from src.transform import prepare_all_countries_u5mr
+from src.config import PROJECT_ID, DATASET_ID, U5MR_TABLE_ID, U5MR_URL
+from src.extract_u5mr import load_u5mr_data
+from src.transform_u5mr import prepare_all_countries_u5mr
 from src.load_bigquery import upload_u5mr_to_bigquery
 
 
@@ -24,7 +24,7 @@ def main() -> None:
         final_df,
         project_id=PROJECT_ID,
         dataset_id=DATASET_ID,
-        table_id=TABLE_ID,
+        table_id=U5MR_TABLE_ID,
     )
 
 
