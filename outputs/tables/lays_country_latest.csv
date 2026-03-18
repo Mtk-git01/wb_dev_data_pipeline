@@ -1,0 +1,174 @@
+country_name,country_iso,year,value,indicator_code,indicator_name,obs_status,decimal_places,source_name,load_timestamp
+Kosovo,,2020,7.87082147598267,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Afghanistan,AFG,2020,5.05283832550049,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Angola,AGO,2020,4.23497772216797,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Albania,ALB,2020,8.95301818847656,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+United Arab Emirates,ARE,2020,9.64599704742432,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Argentina,ARG,2020,8.41131019592285,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Armenia,ARM,2020,7.99462080001831,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Antigua and Barbuda,ATG,2020,8.44442176818848,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Australia,AUS,2020,11.2225046157837,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Austria,AUT,2020,10.9062051773071,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Azerbaijan,AZE,2020,8.28151321411133,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Burundi,BDI,2020,5.16467428207397,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Belgium,BEL,2020,11.1832885742188,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Benin,BEN,2020,5.66641664505005,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Burkina Faso,BFA,2020,4.53306150436401,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Bangladesh,BGD,2020,5.9894208908081,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Bulgaria,BGR,2020,8.68730926513672,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Bahrain,BHR,2020,9.28683853149414,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Bosnia and Herzegovina,BIH,2020,7.80188322067261,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Belarus,BLR,2020,10.784273147583,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Brazil,BRA,2020,7.87283945083618,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Brunei Darussalam,BRN,2020,9.21892356872559,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Bhutan,BTN,2020,6.32679033279419,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Botswana,BWA,2020,5.0830454826355,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Central African Republic,CAF,2020,2.69615483283997,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Canada,CAN,2020,11.724045753479,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Switzerland,CHE,2020,10.9337730407715,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Chile,CHL,2020,9.40742969512939,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+China,CHN,2020,9.27002716064453,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Cote d'Ivoire,CIV,2020,4.81159114837646,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Cameroon,CMR,2020,5.28687429428101,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Congo, Dem. Rep.",COD,2020,4.53227567672729,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Congo, Rep.",COG,2020,5.28511667251587,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Colombia,COL,2020,8.62216186523438,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Comoros,COM,2020,5.12938976287842,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Costa Rica,CRI,2020,8.99331092834473,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Cyprus,CYP,2020,10.9170904159546,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Czech Republic,CZE,2020,11.1165237426758,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Germany,DEU,2020,11.0330896377563,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Dominica,DMA,2020,8.00887203216553,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Denmark,DNK,2020,11.0988283157349,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Dominican Republic,DOM,2020,6.55853319168091,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Algeria,DZA,2020,7.091552734375,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Ecuador,ECU,2020,8.69649028778076,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Egypt, Arab Rep.",EGY,2020,6.52936267852783,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Spain,ESP,2020,10.5146961212158,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Estonia,EST,2020,11.7193126678467,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Ethiopia,ETH,2020,4.34911251068115,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Finland,FIN,2020,11.7387523651123,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Fiji,FJI,2020,6.95113611221313,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+France,FRA,2020,11.268723487854,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Micronesia, Fed. Sts.",FSM,2020,7.18635177612305,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Gabon,GAB,2020,6.02492713928223,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+United Kingdom,GBR,2020,11.5380058288574,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Georgia,GEO,2020,8.27399158477783,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Ghana,GHA,2020,5.95872831344604,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Guinea,GIN,2020,4.5682201385498,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Gambia, The",GMB,2020,5.37541961669922,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Greece,GRC,2020,9.9642505645752,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Grenada,GRD,2020,8.27358818054199,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Guatemala,GTM,2020,6.29768991470337,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Guyana,GUY,2020,6.76324939727783,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Hong Kong SAR, China",HKG,2020,11.8867826461792,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Honduras,HND,2020,6.1338038444519,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Croatia,HRV,2020,10.4461622238159,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Haiti,HTI,2020,6.14986038208008,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Hungary,HUN,2020,10.2715682983398,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Indonesia,IDN,2020,7.82776832580566,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+India,IND,2020,7.10217046737671,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Ireland,IRL,2020,11.5947971343994,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Iran, Islamic Rep.",IRN,2020,8.19246196746826,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Iraq,IRQ,2020,4.03086042404175,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Iceland,ISL,2020,10.7183113098144,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Israel,ISR,2020,10.5865087509155,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Italy,ITA,2020,10.4518785476685,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Jamaica,JAM,2020,7.05798578262329,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Jordan,JOR,2020,7.6661262512207,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Japan,JPN,2020,11.7351493835449,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Kazakhstan,KAZ,2020,9.12743663787842,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Kenya,KEN,2020,8.46923923492432,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Kyrgyz Republic,KGZ,2020,8.65210056304932,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Cambodia,KHM,2020,6.84398031234741,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Kiribati,KIR,2020,7.38194513320923,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+St. Kitts and Nevis,KNA,2020,8.47775077819824,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Korea, Rep.",KOR,2020,11.684027671814,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Kuwait,KWT,2020,7.38203382492065,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Lao PDR,LAO,2020,6.25232076644897,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Lebanon,LBN,2020,6.33523941040039,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Liberia,LBR,2020,2.20650243759155,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+St. Lucia,LCA,2020,8.4803295135498,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Sri Lanka,LKA,2020,8.46218395233154,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Lesotho,LSO,2020,6.31405115127563,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Lithuania,LTU,2020,10.9752321243286,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Luxembourg,LUX,2020,9.79557704925537,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Latvia,LVA,2020,10.9788007736206,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Macao SAR, China",MAC,2020,11.5738143920898,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Morocco,MAR,2020,6.31768131256104,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Moldova,MDA,2020,8.28882122039795,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Madagascar,MDG,2020,4.71344089508057,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Mexico,MEX,2020,8.82425403594971,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Marshall Islands,MHL,2020,5.65948820114136,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+North Macedonia,MKD,2020,7.29640483856201,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Mali,MLI,2020,2.57839322090149,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Malta,MLT,2020,10.1930236816406,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Myanmar,MMR,2020,6.78796720504761,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Montenegro,MNE,2020,8.9080924987793,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Mongolia,MNG,2020,9.15325736999512,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Mozambique,MOZ,2020,4.47178792953491,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Mauritania,MRT,2020,4.23143672943115,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Mauritius,MUS,2020,9.40572452545166,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Malawi,MWI,2020,5.50565242767334,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Malaysia,MYS,2020,8.88928508758545,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Namibia,NAM,2020,6.10606479644775,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Niger,NER,2020,2.682461977005,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Nigeria,NGA,2020,5.03834247589111,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Nicaragua,NIC,2020,6.74772310256958,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Netherlands,NLD,2020,11.5390224456787,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Norway,NOR,2020,11.2338733673096,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Nepal,NPL,2020,7.22666120529175,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+New Zealand,NZL,2020,11.3902349472046,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Oman,OMN,2020,8.64499092102051,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Pakistan,PAK,2020,5.0792350769043,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Panama,PAN,2020,6.48086738586426,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Peru,PER,2020,8.63224697113037,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Philippines,PHL,2020,7.49233388900757,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Palau,PLW,2020,8.69223594665527,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Papua New Guinea,PNG,2020,5.99894571304321,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Poland,POL,2020,11.3741827011108,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Portugal,PRT,2020,11.3100528717041,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Paraguay,PRY,2020,6.97648620605469,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+West Bank and Gaza,PSE,2020,8.04729080200195,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Qatar,QAT,2020,8.77822017669678,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Romania,ROU,2020,8.36918926239014,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Russian Federation,RUS,2020,10.8980865478516,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Rwanda,RWA,2020,3.92577123641968,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Saudi Arabia,SAU,2020,7.88817739486694,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Sudan,SDN,2020,4.30143785476685,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Senegal,SEN,2020,4.83831882476807,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Singapore,SGP,2020,12.813289642334,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Solomon Islands,SLB,2020,4.67510604858398,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Sierra Leone,SLE,2020,4.85470771789551,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+El Salvador,SLV,2020,7.63728857040405,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Serbia,SRB,2020,9.75260734558105,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+South Sudan,SSD,2020,2.51134634017944,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Slovak Republic,SVK,2020,9.79978275299072,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Slovenia,SVN,2020,11.3709392547607,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Sweden,SWE,2020,11.5808744430542,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Eswatini,SWZ,2020,4.52542972564697,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Seychelles,SYC,2020,9.70082473754883,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Chad,TCD,2020,2.83042907714844,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Togo,TGO,2020,5.97273874282837,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Thailand,THA,2020,8.68309020996094,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Tajikistan,TJK,2020,6.78547477722168,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Timor-Leste,TLS,2020,6.29272079467773,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Tonga,TON,2020,7.14021062850952,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Trinidad and Tobago,TTO,2020,9.11580753326416,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Tunisia,TUN,2020,6.49405193328857,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Turkey,TUR,2020,9.22749519348145,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Tuvalu,TUV,2020,5.99778366088867,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Tanzania,TZA,2020,4.48491764068604,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Uganda,UGA,2020,4.33587217330933,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Ukraine,UKR,2020,9.87451553344727,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Uruguay,URY,2020,8.55120277404785,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+United States,USA,2020,10.556770324707,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Uzbekistan,UZB,2020,9.13336372375488,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+St. Vincent and the Grenadines,VCT,2020,7.71073007583618,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Vietnam,VNM,2020,10.6805419921875,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Vanuatu,VUT,2020,5.62425851821899,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Samoa,WSM,2020,7.24516868591309,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+"Yemen, Rep.",YEM,2020,4.17876148223877,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+South Africa,ZAF,2020,5.60340404510498,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Zambia,ZMB,2020,5.03629302978516,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00
+Zimbabwe,ZWE,2020,7.00661039352417,HD.HCI.LAYS,Learning-Adjusted Years of School,,1,World Bank API,2026-03-18 06:35:41.949319+00:00

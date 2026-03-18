@@ -6,12 +6,10 @@ def upload_to_bigquery(df, project_id: str, dataset_id: str, table_id: str) -> N
     table_ref = f"{project_id}.{dataset_id}.{table_id}"
 
     schema_map = {
+        # common WB-style indicator tables
         "country_name": "STRING",
         "country_iso": "STRING",
         "year": "INTEGER",
-        "u5mr_estimate": "FLOAT",
-        "standard_error_of_estimates": "FLOAT",
-        "is_interpolated": "BOOL",
         "value": "FLOAT",
         "indicator_code": "STRING",
         "indicator_name": "STRING",
@@ -20,6 +18,12 @@ def upload_to_bigquery(df, project_id: str, dataset_id: str, table_id: str) -> N
         "source_name": "STRING",
         "load_timestamp": "TIMESTAMP",
 
+        # U5MR
+        "u5mr_estimate": "FLOAT",
+        "standard_error_of_estimates": "FLOAT",
+        "is_interpolated": "BOOL",
+
+        # trade
         "reporter_name": "STRING",
         "reporter_iso3": "STRING",
         "hs_code": "STRING",
@@ -30,6 +34,23 @@ def upload_to_bigquery(df, project_id: str, dataset_id: str, table_id: str) -> N
         "partner_name": "STRING",
         "trade_value_usd": "FLOAT",
         "net_weight_kg": "FLOAT",
+
+        # city temperature
+        "city_name": "STRING",
+        "country_name": "STRING",
+        "latitude": "FLOAT",
+        "longitude": "FLOAT",
+        "avg_temp_c_annual": "FLOAT",
+        "observation_days": "INTEGER",
+        
+        # Bg
+        "date": "DATE",
+        "currency_code": "STRING",
+        "local_price": "FLOAT",
+        "dollar_price": "FLOAT",
+        "usd_raw_index": "FLOAT",
+        "usd_adjusted_index": "FLOAT",
+        "gdp_dollar": "FLOAT",
     }
 
     schema = []

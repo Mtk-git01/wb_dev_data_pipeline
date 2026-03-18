@@ -1,0 +1,171 @@
+country_name,country_iso,year,value,indicator_code,indicator_name,obs_status,decimal_places,source_name,load_timestamp
+Aruba,ABW,1999,-82.3118718080831,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Afghanistan,AFG,2023,73.8233974820921,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Angola,AGO,2023,4.00461279211865,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Albania,ALB,2023,149.385036292877,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+United Arab Emirates,ARE,1995,2.22207429508166,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Argentina,ARG,2023,5.68800615283187,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Armenia,ARM,2023,69.2029657728401,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Antigua and Barbuda,ATG,2021,66.4514499223929,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Azerbaijan,AZE,2023,12.1356285677725,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Burundi,BDI,2023,45.4121768668117,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Benin,BEN,2023,73.3419179524024,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Burkina Faso,BFA,2023,62.3832177065524,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Bangladesh,BGD,2023,33.1484061268877,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Bahrain,BHR,2004,70.6775566843257,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Bahamas, The",BHS,1995,14.5624139324344,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Bosnia and Herzegovina,BIH,2023,96.6030909585168,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Belarus,BLR,2023,12.5026163840657,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Belize,BLZ,2023,77.4954460643518,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Bermuda,BMU,1996,-68.045411058823,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Bolivia,BOL,2023,62.4292361486276,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Brazil,BRA,2023,3.31519108657131,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Barbados,BRB,2010,56.6045273583928,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Brunei Darussalam,BRN,1995,14.7323956862344,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Bhutan,BTN,2023,199.441804221712,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Botswana,BWA,2023,114.739960812418,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Central African Republic,CAF,2023,143.155157951931,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Chile,CHL,2017,3.78823571114969,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+China,CHN,2023,-0.189379104551631,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Cote d'Ivoire,CIV,2023,76.2482761497041,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Cameroon,CMR,2023,33.1399299566968,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Congo, Dem. Rep.",COD,2023,41.0936911007341,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Congo, Rep.",COG,2023,61.0556744340299,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Colombia,COL,2023,19.7111636803339,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Comoros,COM,2023,195.61792088737,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Cabo Verde,CPV,2023,194.7201126015,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Costa Rica,CRI,2023,28.3204966027919,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Cuba,CUB,2023,15.1678311560017,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Cayman Islands,CYM,1996,-59.45581733854,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Cyprus,CYP,1996,25.6506377713096,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Djibouti,DJI,2023,192.875551703299,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Dominica,DMA,2023,791.408990204129,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Dominican Republic,DOM,2023,58.5456523406284,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Algeria,DZA,2023,4.38250644254627,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Ecuador,ECU,2023,30.8512518461487,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Egypt, Arab Rep.",EGY,2023,4.19143847140857,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Eritrea,ERI,2023,37.2265445819513,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Ethiopia,ETH,2023,41.9750927132499,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Fiji,FJI,2023,205.801139425243,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Micronesia, Fed. Sts.",FSM,2023,1116.98976029175,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Gabon,GAB,2023,21.3896678310842,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Georgia,GEO,2023,98.295954917003,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Ghana,GHA,2023,46.5248761916761,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Gibraltar,GIB,1999,1.08334534628946,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Guinea,GIN,2023,36.9132954166042,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Gambia, The",GMB,2023,127.456239233305,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Guinea-Bissau,GNB,2023,87.7296170435593,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Equatorial Guinea,GNQ,2023,6.31291392875756,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Grenada,GRD,2023,328.786268408646,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Guatemala,GTM,2023,24.663311427662,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Guyana,GUY,2023,169.164893202043,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Hong Kong SAR, China",HKG,1996,2.0511226492526,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Honduras,HND,2023,51.7401889009531,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Croatia,HRV,2010,35.0302778328448,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Haiti,HTI,2023,92.6031251855552,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Indonesia,IDN,2023,4.10782457608447,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+India,IND,2023,1.65260570025899,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Iran, Islamic Rep.",IRN,2023,2.65695666756535,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Iraq,IRQ,2023,44.5370832960822,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Israel,ISR,1996,389.451863978501,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Jamaica,JAM,2023,30.4301048236516,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Jordan,JOR,2023,247.766298681889,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Kazakhstan,KAZ,2023,3.88991077711231,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Kenya,KEN,2023,46.9076574806901,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Kyrgyz Republic,KGZ,2023,62.0475760177515,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Cambodia,KHM,2023,90.7524971543187,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Kiribati,KIR,2023,741.899640463185,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+St. Kitts and Nevis,KNA,2013,638.364816061988,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Korea, Rep.",KOR,1999,-1.18198039886286,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Kuwait,KWT,1995,2.51559162437251,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Lao PDR,LAO,2023,67.1675188759754,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Lebanon,LBN,2023,302.607671211237,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Liberia,LBR,2023,102.428325595366,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Libya,LBY,2023,49.2324144794595,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+St. Lucia,LCA,2023,199.958607007959,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Sri Lanka,LKA,2023,37.5395846376619,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Lesotho,LSO,2023,74.5481180179435,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Macao SAR, China",MAC,1999,0.748713132539642,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Morocco,MAR,2023,20.4618980784689,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Moldova,MDA,2023,427.778149762534,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Madagascar,MDG,2023,40.1845106508999,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Maldives,MDV,2023,381.197618056687,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Mexico,MEX,2023,3.48129436929561,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Marshall Islands,MHL,2023,3248.47169081709,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+North Macedonia,MKD,2023,226.75215238197,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Mali,MLI,2023,54.3763613066357,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Malta,MLT,2002,27.880970383674,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Myanmar,MMR,2023,21.0726202288057,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Montenegro,MNE,2023,148.122082046367,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Mongolia,MNG,2023,74.7368553514048,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Northern Mariana Islands,MNP,1999,1.82049877598445,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Mozambique,MOZ,2023,87.0332835630557,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Mauritania,MRT,2023,83.5231416893759,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Mauritius,MUS,2023,75.970762247197,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Malawi,MWI,2023,82.0439871307611,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Malaysia,MYS,2023,0.187285863646012,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Namibia,NAM,2023,91.6719169911707,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+New Caledonia,NCL,1999,1439.22723400598,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Niger,NER,2023,49.0281617421713,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Nigeria,NGA,2023,15.7817925654221,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Nicaragua,NIC,2023,85.2601797175668,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Nepal,NPL,2023,39.5067213475248,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Nauru,NRU,2023,3164.75990696957,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Oman,OMN,2010,2.57121994504621,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Pakistan,PAK,2023,16.0146653504465,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Panama,PAN,2023,91.9951913092928,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Peru,PER,2023,17.3218168286015,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Philippines,PHL,2023,16.0385552488963,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Palau,PLW,2023,1623.81324804649,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Papua New Guinea,PNG,2023,66.5173632652428,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Korea, Dem. People's Rep.",PRK,2023,0.546002559648267,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Paraguay,PRY,2023,32.6838608110311,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+West Bank and Gaza,PSE,2023,701.515851324341,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+French Polynesia,PYF,1999,1485.6611509119,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Qatar,QAT,1995,7.27166676622124,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Rwanda,RWA,2023,99.4185397556676,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Saudi Arabia,SAU,2007,-5.85962863288881,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Sudan,SDN,2023,27.7774921151356,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Senegal,SEN,2023,102.868410823438,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Singapore,SGP,1995,4.72690352844118,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Solomon Islands,SLB,2023,304.574817598796,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Sierra Leone,SLE,2023,58.8380993439453,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+El Salvador,SLV,2023,79.0554863946107,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Somalia, Fed. Rep.",SOM,2023,124.252018504834,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Serbia,SRB,2023,87.302697316782,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+South Sudan,SSD,2023,156.02766216823,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Sao Tome and Principe,STP,2023,376.141532777892,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Suriname,SUR,2023,69.2090534649576,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Slovenia,SVN,2002,26.4523463279736,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Eswatini,SWZ,2023,89.7437179588275,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Sint Maarten (Dutch part),SXM,1999,4099.17046056539,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Seychelles,SYC,2017,169.040048719304,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Syrian Arab Republic,SYR,2023,390.185397060593,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Turks and Caicos Islands,TCA,2007,585.839373556254,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Chad,TCD,2023,58.9029673131421,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Togo,TGO,2023,66.1531203451647,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Thailand,THA,2023,1.18501966880716,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Tajikistan,TJK,2023,51.0885596268663,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Turkmenistan,TKM,2023,4.93618315657385,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Timor-Leste,TLS,2023,187.775787869782,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Tonga,TON,2023,1238.55569083938,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Trinidad and Tobago,TTO,2010,3.29358279003478,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Tunisia,TUN,2023,100.478477957434,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Turkiye,TUR,2023,18.1704437158285,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Tuvalu,TUV,2023,6962.21579355055,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Tanzania,TZA,2023,45.8863988750306,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Uganda,UGA,2023,46.3778917925623,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Ukraine,UKR,2023,1031.86548017488,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Uruguay,URY,2017,12.2894097290799,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Uzbekistan,UZB,2023,33.6606227872401,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+St. Vincent and the Grenadines,VCT,2023,210.058338159297,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Venezuela, RB",VEN,2023,14.3209485644105,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+British Virgin Islands,VGB,1999,129.751644337534,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Viet Nam,VNM,2023,8.28270884487755,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Vanuatu,VUT,2023,468.318895122135,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Samoa,WSM,2023,540.805203113443,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Kosovo,XKX,2023,239.062390368952,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+"Yemen, Rep.",YEM,2023,105.265488501991,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+South Africa,ZAF,2023,23.839417464983,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Zambia,ZMB,2023,68.6129322663853,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
+Zimbabwe,ZWE,2023,48.4390786946317,DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,0,World Bank API,2026-03-18 02:33:55.440978+00:00
