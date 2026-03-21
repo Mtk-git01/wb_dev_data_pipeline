@@ -683,7 +683,8 @@ data/raw/global_findex_country.csv
 data/raw/imf_fas.csv
 data/raw/wgi.xlsx
 
-This design is intentional for source files whose download links, packaging, or bulk export formats may change over time.
+- This design is intentional for source files whose download links, packaging, or bulk export formats may change over time.  
+Raw source files are intentionally not tracked in Git due to file size and source-distribution considerations. Place them manually in `data/raw/` before running the pipelines.
 
 ## Repository structure
 wb_dev_data_pipeline/

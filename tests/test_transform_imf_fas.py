@@ -1,23 +1,23 @@
 import pandas as pd
 
+import pandas as pd
 from src.transform_imf_fas import transform_imf_fas, latest_non_null
-
 
 def test_transform_imf_fas_basic():
     raw_df = pd.DataFrame({
         "COUNTRY": ["Belgium", "Belgium", "Belgium"],
         "SERIES_CODE": [
             "BEL.FA21_COMBANK.NUM.A",
-            "BEL.FA.BRANCH5KPOS.NUM.A",
-            "BEL.FA.ATM5KPOS.NUM.A",
+            "BEL.COMBANK.NUM.A",
+            "BEL.FA63.NUM.A",
         ],
         "INDICATOR": [
             "Borrowers, Commercial banks",
-            "Commercial bank branches per 100,000 adults",
-            "ATMs per 100,000 adults",
+            "Commercial banks",
+            "Active mobile money accounts",
         ],
-        "2023": [6496149, 45.2, 112.7],
-        "2024": [6500000, 44.9, 111.0],
+        "2023": [6496149, 100, 250000],
+        "2024": [6500000, 101, 255000],
     })
 
     out = transform_imf_fas(raw_df)
@@ -25,9 +25,9 @@ def test_transform_imf_fas_basic():
     assert "country_name" in out.columns
     assert "country_iso" in out.columns
     assert "borrowers_commercial_banks_number" in out.columns
-    assert "commercial_bank_branches_per_100k" in out.columns
-    assert "atms_per_100k" in out.columns
-    assert len(out) == 2  # 2023, 2024
+    assert "commercial_banks_number" in out.columns
+    assert "active_mobile_money_accounts_number" in out.columns
+    assert len(out) == 2
 
 
 def test_latest_non_null():

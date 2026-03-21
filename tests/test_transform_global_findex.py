@@ -1,27 +1,27 @@
 import pandas as pd
 
+import pandas as pd
 from src.transform_global_findex import transform_global_findex, latest_non_null
-
 
 def test_transform_global_findex_basic():
     raw_df = pd.DataFrame({
-        "country": ["Japan", "Japan", "Azerbaijan"],
-        "iso3": ["JPN", "JPN", "AZE"],
+        "countrynewwb": ["Japan", "Japan", "Azerbaijan"],
+        "codewb": ["JPN", "JPN", "AZE"],
         "year": [2021, 2024, 2021],
-        "account_ownership": [95.0, 97.0, 63.0],
-        "digital_payment": [88.0, 91.0, 42.0],
-        "female_account_ownership": [94.0, 96.0, 60.0],
-        "male_account_ownership": [96.0, 98.0, 66.0],
+        "account_t_d": [95.0, 97.0, 63.0],
+        "fiaccount_t_d": [94.0, 96.0, 61.0],
+        "mobileaccount_t_d": [2.0, 3.0, None],
+        "dig_acc": [88.0, 91.0, None],
+        "borrow_any_t_d": [10.0, 11.0, 7.0],
     })
 
     out = transform_global_findex(raw_df)
 
     assert "country_name" in out.columns
     assert "country_iso" in out.columns
-    assert "year" in out.columns
     assert "account_ownership_pct" in out.columns
+    assert "digital_payment_pct" in out.columns
     assert len(out) == 3
-
 
 def test_latest_non_null():
     df = pd.DataFrame({
