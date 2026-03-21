@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `worldbank01.wb_dev_stats.trade_country_year_long` (
+CREATE TABLE IF NOT EXISTS `worldbank01.external_dev_stats.trade_country_year_long` (
   reporter_name STRING,
   reporter_iso3 STRING,
   year INT64,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `worldbank01.wb_dev_stats.trade_country_year_long` (
   load_timestamp TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS `worldbank01.wb_dev_stats.trade_country_latest` (
+CREATE TABLE IF NOT EXISTS `worldbank01.external_dev_stats.trade_country_latest` (
   reporter_name STRING,
   reporter_iso3 STRING,
   year INT64,

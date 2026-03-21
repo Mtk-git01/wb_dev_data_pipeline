@@ -2,7 +2,7 @@ from pathlib import Path
 
 from src.config import (
     PROJECT_ID,
-    DATASET_ID,
+    EXTERNAL_DATASET_ID,
     TRADE_TABLE_COUNTRY_YEAR,
     TRADE_TABLE_COUNTRY_LATEST,
 )
@@ -50,14 +50,14 @@ def main() -> None:
     upload_to_bigquery(
         country_year_df,
         project_id=PROJECT_ID,
-        dataset_id=DATASET_ID,
+        dataset_id=EXTERNAL_DATASET_ID,
         table_id=TRADE_TABLE_COUNTRY_YEAR,
     )
 
     upload_to_bigquery(
         latest_df,
         project_id=PROJECT_ID,
-        dataset_id=DATASET_ID,
+        dataset_id=EXTERNAL_DATASET_ID,
         table_id=TRADE_TABLE_COUNTRY_LATEST,
     )
     print("RAW SHAPE:", raw_df.shape)

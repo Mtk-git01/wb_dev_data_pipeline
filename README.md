@@ -1,6 +1,6 @@
-# wb_dev_data_pipeline
+# # World Bank Development Statistics Pipeline and Azerbaijan CPF Analysis
 
-Reproducible ETL pipelines for public development indicators, trade statistics, and climate-related external data, with validation, BigQuery loading, and analysis-ready outputs.
+Reproducible ETL pipelines for World Bank development indicators, logistics, governance and financial access datasets, with analysis-ready outputs and Azerbaijan CPF-focused analytical use cases.
 
 ## Overview
 This repository builds development-data pipelines that:
@@ -19,8 +19,13 @@ Current implemented pipelines include:
 - Net ODA received per capita
 - Learning-adjusted years of schooling (LAYS)
 
+### World Bank source-oriented non-API datasets
+- Worldwide Governance Indicators (WGI)
+
 ### External source-oriented datasets
 - Under-five mortality (U5MR) from UN-IGME
+- Global Findex from the World Bank
+- Financial Access Survey (FAS) from IMF
 - Merchandise trade flows from UN Comtrade
 - City temperature time series from Open-Meteo
 - Big Mac Index from The Economist
@@ -39,26 +44,26 @@ This project is designed to demonstrate:
 - the ability to transform source statistical inputs into curated analytical assets
 
 A central design principle is to distinguish between:
-- **official API-based World Bank indicators**
+- **official or World Bank-managed development indicators**
 - **external public datasets used as complementary analytical inputs**
 
 To reflect this, BigQuery tables are organized into two datasets:
 
 - `wb_dev_stats`  
-  for World Bank API-derived tables
+  for World Bank API-derived tables and World Bank source datasets such as WGI
 
 - `external_dev_stats`  
-  for external datasets such as UN-IGME, UN Comtrade, Open-Meteo, and Big Mac Index
+  for external datasets such as UN-IGME, Global Findex, IMF FAS, UN Comtrade, Open-Meteo, and Big Mac Index
 
 ---
 
 ## BigQuery datasets
 
-### 1) World Bank API-derived dataset
+### 1) World Bank / World Bank-managed dataset
 Dataset:
 - `worldbank01.wb_dev_stats`
 
-This dataset contains indicators retrieved directly from the World Bank API.
+This dataset contains indicators retrieved directly from the World Bank API and other World Bank-managed data products.
 
 ### 2) External source-oriented dataset
 Dataset:
@@ -87,15 +92,19 @@ This reflects an explicit **data lineage** choice:
 - flag interpolated years using `is_interpolated`
 
 ### Linear interpolation
-If observed values are available at:
-- year `t0` with value `y0`
-- year `t1` with value `y1`
+### Note on missing data
+The WDI documentation notes that development data may contain missing values and may not always be fully comparable across countries and years, and that multiple aggregation methods are used depending on the indicator. In this project, I use a simple **linear interpolation** method for demonstration purposes rather than attempting to reproduce the official aggregation rules.
 
-then the estimated value at an intermediate year `t` is:
+If a value is observed at year `x0` and another value is observed at year `x1`, then the interpolated value at year `x` is:
 
-\[
-\hat{y}= y_0 + (y_1-y_0)\frac{t-t_0}{t_1-t_0}
-\]
+`y(x) = y0 + ((x - x0) / (x1 - x0)) * (y1 - y0)`
+
+where:
+
+- `x0`: earlier observed year
+- `x1`: later observed year
+- `y0`: observed value at `x0`
+- `y1`: observed value at `x1`
 
 This converts irregularly spaced observations into a continuous annual analytical series.
 
@@ -164,7 +173,7 @@ Two tables are created:
 
 #### Country-year table
 - full country-year time series
-- useful for panel analysis and joins with education, health, aid, and trade indicators
+- useful for panel analysis and joins with education, health, aid, trade, governance, and financial access indicators
 
 #### Latest country snapshot
 - most recent non-null value for each country
@@ -241,7 +250,199 @@ Tables:
 
 ---
 
-## 6) Trade pipeline
+## 6) WGI pipeline
+This workflow uses the **Worldwide Governance Indicators (WGI)** as a World Bank-managed governance dataset covering six core dimensions of institutional quality.
+
+### Source
+- World Bank Worldwide Governance Indicators (WGI)
+
+### Why this matters analytically
+WGI provides a governance layer that can be joined with development, education, health, trade, and financial access indicators.  
+This makes it possible to study relationships between:
+- governance quality and human development
+- institutional quality and economic performance
+- governance and financial access
+- governance and trade structure
+
+### Current governance dimensions included
+- Voice and Accountability
+- Political Stability and Absence of Violence/Terrorism
+- Government Effectiveness
+- Regulatory Quality
+- Rule of Law
+- Control of Corruption
+
+### Transformations
+The current WGI input file is structured as:
+- one row per economy × governance dimension × year
+
+The workflow:
+- reads the official WGI Excel bulk file
+- standardizes identifiers
+- maps governance dimension codes
+- pivots dimension rows into a single country-year analytical table
+- loads curated outputs into BigQuery
+
+### Outputs
+Two tables are created:
+
+#### Country-year table
+- full country-year time series
+- useful for panel analysis and joins with GDP, U5MR, trade, and financial access indicators
+
+#### Latest country snapshot
+- most recent non-null value for each country
+- useful for cross-country institutional comparison
+
+### BigQuery tables
+Dataset:
+- `wb_dev_stats`
+
+Tables:
+- `worldbank01.wb_dev_stats.wgi_country_year`
+- `worldbank01.wb_dev_stats.wgi_country_latest`
+
+### Main columns
+- `country_name`
+- `country_iso`
+- `year`
+- `voice_accountability`
+- `political_stability`
+- `government_effectiveness`
+- `regulatory_quality`
+- `rule_of_law`
+- `control_of_corruption`
+- `source_name`
+- `load_timestamp`
+
+---
+
+## 7) Global Findex pipeline
+This workflow uses the **World Bank Global Findex** country-level dataset as a complementary source for financial inclusion analysis.
+
+### Source
+- World Bank Global Findex
+
+### Why this matters analytically
+Global Findex provides demand-side indicators on account ownership, financial access, digital payments, mobile money, and related financial inclusion outcomes.  
+In this repository it is treated as a complementary dataset that can be joined with:
+- GDP per capita
+- U5MR
+- girls’ primary completion
+- LAYS
+- WGI
+- trade indicators
+
+This makes it possible to study relationships between:
+- financial inclusion and development outcomes
+- digital payments and income level
+- account ownership and gender-relevant development patterns
+- governance and financial access
+
+### Important note on missing values
+Indicator coverage varies across countries and survey waves.  
+Nulls are retained as source-faithful missing values rather than being imputed.
+
+### Outputs
+Two tables are created:
+
+#### Country-year table
+- historical country-year data
+- useful for panel analysis and joins with macro and development indicators
+
+#### Latest country snapshot
+- most recent non-null record for each country
+- useful for cross-country comparison
+
+### BigQuery tables
+Dataset:
+- `external_dev_stats`
+
+Tables:
+- `worldbank01.external_dev_stats.global_findex_country_year`
+- `worldbank01.external_dev_stats.global_findex_country_latest`
+
+### Main columns
+- `country_name`
+- `country_iso`
+- `year`
+- `account_ownership_pct`
+- `financial_institution_account_pct`
+- `mobile_money_account_pct`
+- `digital_payment_pct`
+- `borrowed_from_financial_institution_pct`
+- `source_name`
+- `load_timestamp`
+
+---
+
+## 8) IMF FAS pipeline
+This workflow uses the **IMF Financial Access Survey (FAS)** as a complementary source for supply-side and institutional financial access statistics.
+
+### Source
+- IMF Financial Access Survey (FAS)
+
+### Why this matters analytically
+IMF FAS provides country-reported annual financial access and usage statistics, which complement the demand-side perspective of Global Findex.  
+This makes it possible to compare:
+- financial sector structure and financial inclusion
+- commercial banking depth and development outcomes
+- mobile money activity and country trajectories
+- governance, financial institutions, and access patterns
+
+### Current curated subset
+The current implementation keeps a small curated subset of annual series from the FAS bulk file, including:
+- number of commercial banks
+- borrowers from commercial banks
+- active mobile money accounts
+
+This subset is intentionally narrow for a stable first analytical layer and can be extended later.
+
+### Transformations
+The current FAS input file is structured as:
+- one row per country × series
+- annual values stored in year columns
+
+The workflow:
+- reads the IMF FAS bulk CSV
+- extracts ISO3 from `SERIES_CODE`
+- maps selected FAS series into curated analytical variables
+- melts year columns into a long structure
+- pivots into a one-row-per-country-per-year analytical table
+- loads curated outputs into BigQuery
+
+### Outputs
+Two tables are created:
+
+#### Country-year table
+- historical country-year data
+- useful for joins with GDP, governance, education, and financial inclusion indicators
+
+#### Latest country snapshot
+- most recent non-null record for each country
+- useful for cross-country comparison
+
+### BigQuery tables
+Dataset:
+- `external_dev_stats`
+
+Tables:
+- `worldbank01.external_dev_stats.imf_fas_country_year`
+- `worldbank01.external_dev_stats.imf_fas_country_latest`
+
+### Main columns
+- `country_name`
+- `country_iso`
+- `year`
+- `commercial_banks_number`
+- `borrowers_commercial_banks_number`
+- `active_mobile_money_accounts_number`
+- `source_name`
+- `load_timestamp`
+
+---
+
+## 9) Trade pipeline
 This repository also includes a trade-data workflow built from **UN Comtrade**, chosen as a more source-oriented and raw-data-near input for international merchandise trade analysis.
 
 This reflects a deliberate **data lineage** choice:
@@ -294,6 +495,9 @@ This trade pipeline is designed not as a standalone trade exercise, but as a mod
 - GDP per capita
 - Net ODA received per capita
 - LAYS
+- WGI
+- Global Findex
+- IMF FAS
 
 This makes it possible to study relationships between:
 - export structure and human development
@@ -326,7 +530,7 @@ Tables:
 
 ---
 
-## 7) City temperature pipeline
+## 10) City temperature pipeline
 This workflow retrieves historical daily temperature data from **Open-Meteo** for a selected group of major world cities and converts them into annual city-level averages.
 
 ### Cities currently included
@@ -374,7 +578,7 @@ Table:
 
 ---
 
-## 8) Big Mac Index pipeline
+## 11) Big Mac Index pipeline
 This workflow uses the **Big Mac Index** as a supplementary external proxy for price levels, purchasing power, and relative currency valuation.
 
 ### Source
@@ -447,6 +651,9 @@ Examples:
 - latest-value extraction returns the correct row
 - trade transformation returns the expected country-year record
 - climate aggregation returns the correct annual summary
+- governance dimension pivoting works correctly
+- FAS series-code mapping works correctly
+- Global Findex curated variable mapping works correctly
 
 Tests are implemented with `pytest`.
 
@@ -461,8 +668,24 @@ This means destination tables are fully refreshed on each run.
 
 ---
 
-## Repository structure
+## Raw data landing convention
+
+Some workflows read directly from APIs, while others intentionally use manually downloaded source files in a raw landing area.
+
+### Raw landing folder
 ```text
+data/
+└── raw/
+```
+
+- Current manually landed raw files
+data/raw/global_findex_country.csv
+data/raw/imf_fas.csv
+data/raw/wgi.xlsx
+
+This design is intentional for source files whose download links, packaging, or bulk export formats may change over time.
+
+## Repository structure
 wb_dev_data_pipeline/
 ├── README.md
 ├── requirements.txt
@@ -485,6 +708,15 @@ wb_dev_data_pipeline/
 │   ├── main_lays.py
 │   ├── extract_lays.py
 │   ├── transform_lays.py
+│   ├── main_wgi.py
+│   ├── extract_wgi.py
+│   ├── transform_wgi.py
+│   ├── main_global_findex.py
+│   ├── extract_global_findex.py
+│   ├── transform_global_findex.py
+│   ├── main_imf_fas.py
+│   ├── extract_imf_fas.py
+│   ├── transform_imf_fas.py
 │   ├── main_trade.py
 │   ├── extract_trade.py
 │   ├── transform_trade.py
@@ -502,10 +734,13 @@ wb_dev_data_pipeline/
 │   ├── test_transform_u5mr.py
 │   ├── test_transform_girls_primary_completion.py
 │   ├── test_transform_gdp_per_capita.py
+│   ├── test_transform_lays.py
+│   ├── test_transform_wgi.py
+│   ├── test_transform_global_findex.py
+│   ├── test_transform_imf_fas.py
 │   ├── test_transform_trade.py
 │   ├── test_transform_city_temperature.py
 │   ├── test_transform_big_mac.py
-│   └── test_transform_lays.py
 ├── sql/
 │   ├── create_dataset.sql
 │   ├── create_tables_u5mr.sql
@@ -513,10 +748,15 @@ wb_dev_data_pipeline/
 │   ├── create_tables_gdp_per_capita.sql
 │   ├── create_tables_oda_per_capita.sql
 │   ├── create_tables_lays.sql
+│   ├── create_tables_wgi.sql
+│   ├── create_tables_global_findex.sql
+│   ├── create_tables_imf_fas.sql
 │   ├── create_tables_trade.sql
 │   ├── create_tables_city_temperature.sql
 │   ├── create_tables_big_mac.sql
 │   └── sample_queries.sql
+├── data/
+│   └── raw/
 ├── outputs/
 │   ├── charts/
 │   └── tables/

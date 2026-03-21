@@ -25,9 +25,12 @@ TRADE_TARGETS = [
     {"reporter_iso3": "GHA", "reporter_name": "Ghana",      "hs_code": "1801", "hs_label": "Cocoa beans", "flow_code": "X", "flow_name": "Export"},
     {"reporter_iso3": "BRA", "reporter_name": "Brazil",     "hs_code": "0901", "hs_label": "Coffee",      "flow_code": "X", "flow_name": "Export"},
     {"reporter_iso3": "BRA", "reporter_name": "Brazil",     "hs_code": "1801", "hs_label": "Cocoa beans", "flow_code": "X", "flow_name": "Export"},
+    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "2709", "hs_label": "oils",        "flow_code": "X", "flow_name": "Export"},
     {"reporter_iso3": "BRA", "reporter_name": "Brazil",     "hs_code": "7113", "hs_label": "Jewellery",   "flow_code": "M", "flow_name": "Import"},
     {"reporter_iso3": "KAZ", "reporter_name": "Kazakhstan", "hs_code": "7113", "hs_label": "Jewellery",   "flow_code": "M", "flow_name": "Import"},
     {"reporter_iso3": "JPN", "reporter_name": "Japan",      "hs_code": "7113", "hs_label": "Jewellery",   "flow_code": "M", "flow_name": "Import"},
+    {"reporter_iso3": "JPN", "reporter_name": "Japan",      "hs_code": "2709", "hs_label": "oils",        "flow_code": "M", "flow_name": "Import"}
+
 ]
 
 TRADE_PARTNER_CODE = "0"
@@ -41,6 +44,7 @@ ISO3_TO_NUMERIC = {
     "KAZ": "398",
     "BRA": "076",
     "GHA": "288",
+    "AZE": "031"
 }
 
 #
@@ -75,6 +79,8 @@ CITY_TEMPERATURE_CITIES = [
     {"city_name": "Nairobi", "country_name": "Kenya", "latitude": -1.2864, "longitude": 36.8172},
     {"city_name": "Jakarta", "country_name": "Indonesia", "latitude": -6.2088, "longitude": 106.8456},
     {"city_name": "Almaty", "country_name": "Kazakhstan", "latitude": 43.2220, "longitude": 76.8512},
+    {"city_name": "Baku", "country_name": "Azerbaijan", "latitude": 40.4093, "longitude": 49.8671}
+
 ]
 
 CITY_TEMP_START_DATE = "1994-01-01"
@@ -94,3 +100,52 @@ BIG_MAC_TABLE_COUNTRY_LATEST = "big_mac_index_country_latest"
 
 BIG_MAC_SOURCE_NAME = "The Economist Big Mac Index"
 BIG_MAC_CSV_URL = "https://raw.githubusercontent.com/TheEconomist/big-mac-data/master/output-data/big-mac-full-index.csv"
+
+#
+GDP_PC_TABLE_COUNTRY_YEAR = "gdp_per_capita_country_year"
+GDP_PC_TABLE_COUNTRY_LATEST = "gdp_per_capita_country_latest"
+
+GDP_PC_INDICATOR_CODE = "NY.GDP.PCAP.CD"
+GDP_PC_INDICATOR_NAME = "GDP per capita (current US$)"
+GDP_PC_SOURCE_NAME = "World Bank API"
+
+##
+#
+GLOBAL_FINDEX_TABLE_COUNTRY_YEAR = "global_findex_country_year"
+GLOBAL_FINDEX_TABLE_COUNTRY_LATEST = "global_findex_country_latest"
+
+GLOBAL_FINDEX_SOURCE_NAME = "World Bank Global Findex"
+GLOBAL_FINDEX_RAW_PATH = "data/raw/GlobalFindexDatabase2025.csv"
+
+# Curated indicators to keep from the raw Global Findex country file.
+# These are example column names expected in the raw CSV after standardization.
+# Update RAW_TO_TARGET mapping if the official file uses slightly different names.
+GLOBAL_FINDEX_RAW_TO_TARGET = {
+    "account_t_d": "account_ownership_pct",
+    "fiaccount_t_d": "financial_institution_account_pct",
+    "mobileaccount_t_d": "mobile_money_account_pct",
+    "dig_acc": "digital_payment_pct",
+    "borrow_any_t_d": "borrowed_from_financial_institution_pct",
+}
+
+#
+IMF_FAS_TABLE_COUNTRY_YEAR = "imf_fas_country_year"
+IMF_FAS_TABLE_COUNTRY_LATEST = "imf_fas_country_latest"
+
+IMF_FAS_SOURCE_NAME = "IMF Financial Access Survey"
+IMF_FAS_RAW_PATH = "data/raw/imf_fas.csv"
+
+# IMF FAS bulk export (wide format) uses SERIES_CODE.
+# We keep a curated subset and map series code -> target column.
+IMF_FAS_SERIES_TO_TARGET = {
+    "COMBANK": "commercial_banks_number",
+    "FA21_COMBANK": "borrowers_commercial_banks_number",
+    "FA63": "active_mobile_money_accounts_number",
+}
+
+#
+WGI_TABLE_COUNTRY_YEAR = "wgi_country_year"
+WGI_TABLE_COUNTRY_LATEST = "wgi_country_latest"
+
+WGI_SOURCE_NAME = "World Bank Worldwide Governance Indicators"
+WGI_RAW_PATH = "data/raw/wgi.xlsx"
