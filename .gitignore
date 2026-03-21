@@ -1,5 +1,32 @@
+# Python
 __pycache__/
 *.pyc
 .pytest_cache/
-.env
+*.py[cod]
+*.pyo
+*.pyd
 .venv/
+env/
+venv/
+
+# Jupyter / OS / editor
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build / test
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Outputs
+outputs/tables/*
+outputs/charts/*
+!outputs/tables/.gitkeep
+!outputs/charts/.gitkeep
+
+# Raw source files (kept local only)
+data/raw/*
+!data/raw/.gitkeep
