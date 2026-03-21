@@ -1,4 +1,4 @@
-# # World Bank Development Statistics Pipeline and Azerbaijan CPF Analysis
+# World Bank Development Statistics Pipeline and Azerbaijan CPF Analysis
 
 Reproducible ETL pipelines for World Bank development indicators, logistics, governance and financial access datasets, with analysis-ready outputs and Azerbaijan CPF-focused analytical use cases.
 
@@ -687,6 +687,7 @@ data/raw/wgi.xlsx
 Raw source files are intentionally not tracked in Git due to file size and source-distribution considerations. Place them manually in `data/raw/` before running the pipelines.
 
 ## Repository structure
+```text
 wb_dev_data_pipeline/
 ├── README.md
 ├── requirements.txt
