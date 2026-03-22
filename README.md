@@ -7,7 +7,7 @@ This repository builds development-data pipelines that:
 
 - extract public international data from source-oriented datasets, bulk files, APIs, Web scraping, XML feeds, and official web publications.   
 (e.g.,[Central Bank of the Republic of Azerbaijan](https://www.cbar.az/home?language=en), [unicef](https://data.unicef.org/resources/un-inter-agency-group-for-child-mortality-estimation-unigme/), [IMF](https://www.imf.org/en/home), [UN Comtrade](https://comtradeplus.un.org/))
-- transform raw or raw-data-near inputs into curated analytical tables
+- transform raw inputs into curated analytical tables using **Bronze / Silver / Gold** architecture
 - validate structural and data-quality conditions
 - load outputs into BigQuery
 - support downstream cross-country, city-level, and country-specific analysis
