@@ -5,7 +5,8 @@ Reproducible ETL pipelines for public development indicators, governance, financ
 ## Overview
 This repository builds development-data pipelines that:
 
-- extract public international data from source-oriented datasets, bulk files, APIs, Web scraping, XML feeds, and official web publications. (e.g.,[Central Bank of the Republic of Azerbaijan](https://www.cbar.az/home?language=en),[unicef](https://data.unicef.org/resources/un-inter-agency-group-for-child-mortality-estimation-unigme/))
+- extract public international data from source-oriented datasets, bulk files, APIs, Web scraping, XML feeds, and official web publications.   
+(e.g.,[Central Bank of the Republic of Azerbaijan](https://www.cbar.az/home?language=en), [unicef](https://data.unicef.org/resources/un-inter-agency-group-for-child-mortality-estimation-unigme/), [IMF](https://www.imf.org/en/home), [UN Comtrade](https://comtradeplus.un.org/))
 - transform raw or raw-data-near inputs into curated analytical tables
 - validate structural and data-quality conditions
 - load outputs into BigQuery
@@ -166,19 +167,21 @@ This reflects an explicit **data lineage** choice:
 - flag interpolated years using `is_interpolated`
 
 ### Linear interpolation
-If observed values are available at:
-- year `t0` with value `y0`
-- year `t1` with value `y1`
+### Note on missing data
+The WDI documentation notes that development data may contain missing values and may not always be fully comparable across countries and years, and that multiple aggregation methods are used depending on the indicator. In this project, I use a simple **linear interpolation** method for demonstration purposes rather than attempting to reproduce the official aggregation rules. [WDI Sources and Methods](https://datatopics.worldbank.org/world-development-indicators/sources-and-methods.html).
 
-then the estimated value at an intermediate year `t` is:
+If a value is observed at year `x0` and another value is observed at year `x1`, then the interpolated value at year `x` is:
 
-\[
-\hat{y}= y_0 + (y_1-y_0)\frac{t-t_0}{t_1-t_0}
-\]
+`y(x) = y0 + ((x - x0) / (x1 - x0)) * (y1 - y0)`
 
-### Important note
-The U5MR table in this repository is **not the official UN-IGME modelled estimate series**.
-It is an **annualized and interpolated analytical table** derived from the underlying observational source data.
+where:
+
+- `x0`: earlier observed year
+- `x1`: later observed year
+- `y0`: observed value at `x0`
+- `y1`: observed value at `x1`
+
+This produces a continuous annual trend between observed points.
 
 ### BigQuery table
 Dataset:
