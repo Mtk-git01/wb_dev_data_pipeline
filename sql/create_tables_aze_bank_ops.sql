@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS `worldbank01.external_dev_stats.aze_bank_ops_monthly` (
+    month DATE,
+    cpi_yoy FLOAT64,
+    official_fx_reserves_usd_mn FLOAT64,
+    bank_total_assets_mn_azn FLOAT64,
+    bank_loans_customers_mn_azn FLOAT64,
+    bank_deposits_total_mn_azn FLOAT64,
+    refinancing_rate FLOAT64,
+    corridor_floor FLOAT64,
+    corridor_ceiling FLOAT64,
+    usd_azn FLOAT64,
+    eur_azn FLOAT64,
+    gbp_azn FLOAT64,
+    rub_azn FLOAT64,
+    try_azn FLOAT64,
+    kzt_azn FLOAT64,
+    gel_azn FLOAT64,
+    cny_azn FLOAT64,
+    source_name STRING,
+    load_timestamp TIMESTAMP
+);

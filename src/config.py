@@ -20,24 +20,48 @@ TRADE_TABLE_COUNTRY_LATEST = "trade_country_latest"
 
 TRADE_SOURCE_NAME = "UN Comtrade"
 
-TRADE_TARGETS = [
-    {"reporter_iso3": "GHA", "reporter_name": "Ghana",      "hs_code": "0901", "hs_label": "Coffee",      "flow_code": "X", "flow_name": "Export"},
-    {"reporter_iso3": "GHA", "reporter_name": "Ghana",      "hs_code": "1801", "hs_label": "Cocoa beans", "flow_code": "X", "flow_name": "Export"},
-    {"reporter_iso3": "BRA", "reporter_name": "Brazil",     "hs_code": "0901", "hs_label": "Coffee",      "flow_code": "X", "flow_name": "Export"},
-    {"reporter_iso3": "BRA", "reporter_name": "Brazil",     "hs_code": "1801", "hs_label": "Cocoa beans", "flow_code": "X", "flow_name": "Export"},
-    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "2709", "hs_label": "oils",        "flow_code": "X", "flow_name": "Export"},
-    {"reporter_iso3": "BRA", "reporter_name": "Brazil",     "hs_code": "7113", "hs_label": "Jewellery",   "flow_code": "M", "flow_name": "Import"},
-    {"reporter_iso3": "KAZ", "reporter_name": "Kazakhstan", "hs_code": "7113", "hs_label": "Jewellery",   "flow_code": "M", "flow_name": "Import"},
-    {"reporter_iso3": "JPN", "reporter_name": "Japan",      "hs_code": "7113", "hs_label": "Jewellery",   "flow_code": "M", "flow_name": "Import"},
-    {"reporter_iso3": "JPN", "reporter_name": "Japan",      "hs_code": "2709", "hs_label": "oils",        "flow_code": "M", "flow_name": "Import"}
+# TRADE_TARGETS = [
+#     {"reporter_iso3": "GHA", "reporter_name": "Ghana",      "hs_code": "0901", "hs_label": "Coffee",      "flow_code": "X", "flow_name": "Export"},
+#     {"reporter_iso3": "GHA", "reporter_name": "Ghana",      "hs_code": "1801", "hs_label": "Cocoa beans", "flow_code": "X", "flow_name": "Export"},
+#     {"reporter_iso3": "BRA", "reporter_name": "Brazil",     "hs_code": "0901", "hs_label": "Coffee",      "flow_code": "X", "flow_name": "Export"},
+#     {"reporter_iso3": "BRA", "reporter_name": "Brazil",     "hs_code": "1801", "hs_label": "Cocoa beans", "flow_code": "X", "flow_name": "Export"},
+#     {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "2709", "hs_label": "oils",        "flow_code": "X", "flow_name": "Export"},
+#     {"reporter_iso3": "BRA", "reporter_name": "Brazil",     "hs_code": "7113", "hs_label": "Jewellery",   "flow_code": "M", "flow_name": "Import"},
+#     {"reporter_iso3": "KAZ", "reporter_name": "Kazakhstan", "hs_code": "7113", "hs_label": "Jewellery",   "flow_code": "M", "flow_name": "Import"},
+#     {"reporter_iso3": "JPN", "reporter_name": "Japan",      "hs_code": "7113", "hs_label": "Jewellery",   "flow_code": "M", "flow_name": "Import"},
+#     {"reporter_iso3": "JPN", "reporter_name": "Japan",      "hs_code": "2709", "hs_label": "oils",        "flow_code": "M", "flow_name": "Import"}
 
+#]
+
+TRADE_TARGETS = [
+    # Azerbaijan: core export structure and diversification
+    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "2709", "hs_label": "Crude petroleum oils", "flow_code": "X", "flow_name": "Export"},
+    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "2711", "hs_label": "Petroleum gas / natural gas", "flow_code": "X", "flow_name": "Export"},
+    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "0802", "hs_label": "Nuts", "flow_code": "X", "flow_name": "Export"},
+
+    # Azerbaijan: transport / logistics / car-heavy urban economy / Middle Corridor
+    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "8703", "hs_label": "Passenger cars", "flow_code": "M", "flow_name": "Import"},
+    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "8704", "hs_label": "Goods vehicles / trucks", "flow_code": "M", "flow_name": "Import"},
+    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "8607", "hs_label": "Railway parts", "flow_code": "M", "flow_name": "Import"},
+
+    # Azerbaijan: digital connectivity / energy transition
+    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "8517", "hs_label": "Telecom equipment", "flow_code": "M", "flow_name": "Import"},
+    {"reporter_iso3": "AZE", "reporter_name": "Azerbaijan", "hs_code": "8504", "hs_label": "Transformers / electrical equipment", "flow_code": "M", "flow_name": "Import"},
+
+    # Kazakhstan: Middle Corridor / rail / logistics / road connectivity
+    {"reporter_iso3": "KAZ", "reporter_name": "Kazakhstan", "hs_code": "2709", "hs_label": "Crude petroleum oils", "flow_code": "X", "flow_name": "Export"},
+    {"reporter_iso3": "KAZ", "reporter_name": "Kazakhstan", "hs_code": "8703", "hs_label": "Passenger cars", "flow_code": "M", "flow_name": "Import"},
+    {"reporter_iso3": "KAZ", "reporter_name": "Kazakhstan", "hs_code": "8704", "hs_label": "Goods vehicles / trucks", "flow_code": "M", "flow_name": "Import"},
+    {"reporter_iso3": "KAZ", "reporter_name": "Kazakhstan", "hs_code": "8607", "hs_label": "Railway parts", "flow_code": "M", "flow_name": "Import"},
+    {"reporter_iso3": "KAZ", "reporter_name": "Kazakhstan", "hs_code": "8429", "hs_label": "Construction machinery", "flow_code": "M", "flow_name": "Import"},
+    {"reporter_iso3": "KAZ", "reporter_name": "Kazakhstan", "hs_code": "8517", "hs_label": "Telecom equipment", "flow_code": "M", "flow_name": "Import"},
 ]
 
 TRADE_PARTNER_CODE = "0"
 TRADE_PARTNER_NAME = "World"
 
-TRADE_START_YEAR = 2004
-TRADE_END_YEAR = 2023
+TRADE_START_YEAR = 2006
+TRADE_END_YEAR = 2025
 
 ISO3_TO_NUMERIC = {
     "JPN": "392",
@@ -149,3 +173,52 @@ WGI_TABLE_COUNTRY_LATEST = "wgi_country_latest"
 
 WGI_SOURCE_NAME = "World Bank Worldwide Governance Indicators"
 WGI_RAW_PATH = "data/raw/wgi.xlsx"
+
+#AZE
+#
+AZE_BANK_OPS_TABLE_MONTHLY = "aze_bank_ops_monthly"
+
+AZE_BANK_OPS_SOURCE_NAME = "CBAR / State Statistics Committee / manual monthly integration"
+
+AZE_FX_RATES_URL = "https://www.cbar.az/currency/rates?language=en"
+AZE_POLICY_RATE_RAW_PATH = "data/raw/cbar_policy_rate_events.csv"
+AZE_BANKING_MONTHLY_RAW_PATH = "data/raw/aze_banking_monthly.csv"
+AZE_FX_MONTHLY_RAW_PATH = "data/raw/aze_fx_monthly.csv"
+
+#
+AZE_FX_DAILY_RAW_TABLE = "aze_fx_daily_raw"
+AZE_FX_MONTHLY_TABLE = "aze_fx_monthly"
+
+# Azerbaijan layered datasets
+AZE_BRONZE_DATASET_ID = "external_dev_stats_bronze"
+AZE_SILVER_DATASET_ID = "external_dev_stats_silver"
+
+# Azerbaijan macro monthly
+AZE_MACRO_MONTHLY_RAW_TABLE = "aze_macro_monthly_raw"
+AZE_MACRO_MONTHLY_TABLE = "aze_macro_monthly"
+
+# Azerbaijan banking monthly
+AZE_BANKING_MONTHLY_RAW_TABLE = "aze_banking_monthly_raw"
+AZE_BANKING_MONTHLY_TABLE = "aze_banking_monthly"
+
+# Azerbaijan policy rate
+AZE_POLICY_RATE_EVENTS_RAW_TABLE = "aze_policy_rate_events_raw"
+AZE_POLICY_RATE_MONTHLY_TABLE = "aze_policy_rate_monthly"
+
+# Source names
+AZE_MACRO_MONTHLY_SOURCE_NAME = "Azerbaijan SSC / CBAR monthly macro integration"
+AZE_BANKING_MONTHLY_SOURCE_NAME = "CBAR banking monthly integration"
+AZE_POLICY_RATE_SOURCE_NAME = "CBAR policy rate events"
+
+# Raw file paths
+AZE_MACRO_MONTHLY_RAW_PATH = "data/raw/aze_macro_monthly.csv"
+AZE_BANKING_MONTHLY_RAW_PATH = "data/raw/aze_banking_monthly.csv"
+AZE_POLICY_RATE_RAW_PATH = "data/raw/cbar_policy_rate_events.csv"
+
+# Azerbaijan Gold mart
+AZE_BANK_OPS_TABLE_MONTHLY = "aze_bank_ops_monthly"
+AZE_BANK_OPS_SOURCE_NAME = "CBAR / SSC / banking monthly integration"
+
+# Existing FX dynamic layer
+AZE_FX_DAILY_RAW_TABLE = "aze_fx_daily_raw"
+AZE_FX_MONTHLY_TABLE = "aze_fx_monthly"

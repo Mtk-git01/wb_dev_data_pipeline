@@ -1,6 +1,6 @@
 # World Bank Development Statistics Pipeline and Azerbaijan CPF Analysis
 
-Reproducible ETL pipelines for World Bank development indicators, logistics, governance and financial access datasets, with analysis-ready outputs and Azerbaijan CPF-focused analytical use cases.
+Reproducible ETL pipelines for World Bank development indicators, logistics, governance, financial access, and macro-financial monitoring datasets, with analysis-ready outputs and Azerbaijan CPF-focused analytical use cases.
 
 ## Overview
 This repository builds development-data pipelines that:
@@ -10,6 +10,7 @@ This repository builds development-data pipelines that:
 - validate structural and data-quality conditions
 - load outputs into BigQuery
 - support downstream cross-country and city-level analysis
+- support Azerbaijan-focused CPF and simplified banking decision-support demos
 
 Current implemented pipelines include:
 
@@ -28,7 +29,13 @@ Current implemented pipelines include:
 - Financial Access Survey (FAS) from IMF
 - Merchandise trade flows from UN Comtrade
 - City temperature time series from Open-Meteo
-- Big Mac Index from The Economist
+
+### Azerbaijan-focused macro-financial monitoring layer
+- CBAR FX daily raw ingestion and monthly aggregation
+- policy-rate monthly series
+- macro monthly indicators
+- banking monthly indicators
+- integrated Azerbaijan bank-operations monthly mart
 
 ---
 
@@ -38,22 +45,23 @@ This project is designed to demonstrate:
 - source-oriented data extraction
 - reproducible ETL design
 - explicit data-lineage awareness
-- country-year and city-year data modeling
+- country-year, city-year, and month-level data modeling
 - validation before loading
 - cloud-ready analytical storage in BigQuery
 - the ability to transform source statistical inputs into curated analytical assets
+- CPF-informed country analysis
+- simplified macro-to-banking decision-support design
 
 A central design principle is to distinguish between:
 - **official or World Bank-managed development indicators**
 - **external public datasets used as complementary analytical inputs**
+- **country-focused layered marts built for operational interpretation**
 
-To reflect this, BigQuery tables are organized into two datasets:
-
-- `wb_dev_stats`  
-  for World Bank API-derived tables and World Bank source datasets such as WGI
-
-- `external_dev_stats`  
-  for external datasets such as UN-IGME, Global Findex, IMF FAS, UN Comtrade, Open-Meteo, and Big Mac Index
+To reflect this, BigQuery tables are organized into:
+- `wb_dev_stats` for World Bank API-derived tables and World Bank source datasets such as WGI
+- `external_dev_stats` for external datasets and Gold-level Azerbaijan marts
+- `external_dev_stats_bronze` for newly added Azerbaijan raw landing tables
+- `external_dev_stats_silver` for newly added Azerbaijan standardized monthly tables
 
 ---
 
@@ -69,7 +77,19 @@ This dataset contains indicators retrieved directly from the World Bank API and 
 Dataset:
 - `worldbank01.external_dev_stats`
 
-This dataset contains analytical tables derived from external public sources.
+This dataset contains analytical tables derived from external public sources, along with Gold-level Azerbaijan monitoring marts.
+
+### 3) Azerbaijan Bronze dataset
+Dataset:
+- `worldbank01.external_dev_stats_bronze`
+
+This dataset contains source-faithful raw landing tables for the Azerbaijan bank-operations layer.
+
+### 4) Azerbaijan Silver dataset
+Dataset:
+- `worldbank01.external_dev_stats_silver`
+
+This dataset contains cleaned and standardized monthly tables for the Azerbaijan bank-operations layer.
 
 ---
 
@@ -456,24 +476,14 @@ UN Comtrade is treated here as a **primary-data-near trade source** for internat
 Using this source makes it possible to work closer to the original reporting structure of trade statistics before transforming them into curated analytical tables.
 
 ### Current trade scope
-The current implementation focuses on a small, interpretable set of country-product-flow combinations chosen to support development-oriented analysis.
+The current implementation focuses on a small, interpretable set of country-product-flow combinations chosen to support development-oriented analysis and Azerbaijan/Kazakhstan-focused extensions.
 
-#### Luxury goods / high-end consumption proxy
-- Jewellery imports
-  - Japan
-  - Kazakhstan
-
-#### Developing-country-origin commodity exports
-- Coffee exports
-  - Brazil
-  - Ghana
-- Cocoa exports
-  - Brazil
-  - Ghana
-
-This design allows the trade module to capture both:
-- **high-value consumption-oriented trade**
-- **commodity exports linked to developing-country production structures**
+#### Azerbaijan / Kazakhstan-focused analytical extensions
+The trade layer is being used to support country analysis related to:
+- hydrocarbon export dependence
+- non-oil diversification
+- transport and logistics connectivity
+- vehicle, rail, telecom, and grid-related imports
 
 ### Trade transformations
 The trade workflow:
@@ -502,7 +512,7 @@ This trade pipeline is designed not as a standalone trade exercise, but as a mod
 This makes it possible to study relationships between:
 - export structure and human development
 - commodity dependence and social indicators
-- high-end import exposure and economic development level
+- transport and connectivity proxies
 - trade patterns and broader country trajectories
 
 ### BigQuery tables
@@ -578,7 +588,175 @@ Table:
 
 ---
 
-## 11) Big Mac Index pipeline
+## 11) Azerbaijan bank-operations monitoring layer
+
+This repository includes an Azerbaijan-focused macro-financial monitoring layer designed as a **simplified decision-support demo** rather than a replication of back-office banking procedures.
+
+The purpose is to show how CPF-relevant macro, trade, governance, and financial-access signals can be translated into practical banking and financial-sector monitoring logic.
+
+### Analytical intent
+This layer is designed to support:
+- macro-to-banking signal design
+- FX pressure monitoring
+- liquidity and funding interpretation
+- lending stance interpretation
+- CPF-informed financial-sector discussion
+- dashboard-ready monthly monitoring
+
+### Layering design
+The Azerbaijan bank-operations component follows a Bronze / Silver / Gold structure for newly added macro, banking, and policy-rate components.
+
+#### Bronze
+Source-faithful raw landing tables.
+
+#### Silver
+Cleaned and standardized monthly analytical tables.
+
+#### Gold
+Integrated monthly mart for notebook and dashboard use.
+
+---
+
+## 11.1) Azerbaijan FX ingestion
+
+### Source
+- CBAR exchange-rate XML feed
+
+### Design
+- daily raw FX snapshots are ingested dynamically from the official CBAR XML feed
+- raw observations are accumulated in a daily raw table
+- monthly FX tables are derived from the latest available daily observation in each month
+- historical backfill can be performed by iterating over date-addressable CBAR XML files
+
+### Current tables
+#### Legacy external dataset
+- `worldbank01.external_dev_stats.aze_fx_daily_raw`
+- `worldbank01.external_dev_stats.aze_fx_monthly`
+
+### Main columns
+#### `aze_fx_daily_raw`
+- `as_of_date`
+- `currency_name`
+- `currency_code`
+- `nominal`
+- `rate_azn`
+- `rate_azn_per_unit`
+
+#### `aze_fx_monthly`
+- `month`
+- `usd_azn`
+- `eur_azn`
+- `gbp_azn`
+- `rub_azn`
+- `try_azn`
+- `kzt_azn`
+- `gel_azn`
+- `cny_azn`
+
+### Important note
+The FX layer is the first Azerbaijan component to support dynamic ingestion and historical backfill. It remains in the legacy external dataset for now and may be migrated into the layered Bronze/Silver structure in a later cleanup step.
+
+---
+
+## 11.2) Azerbaijan macro monthly pipeline
+
+### Bronze
+- `worldbank01.external_dev_stats_bronze.aze_macro_monthly_raw`
+
+### Silver
+- `worldbank01.external_dev_stats_silver.aze_macro_monthly`
+
+### Current variables
+- `cpi_yoy`
+- `official_fx_reserves_usd_mn`
+
+### Purpose
+This layer standardizes monthly macro-financial inputs used by the Azerbaijan monitoring mart.
+
+### Important note
+At the current stage, the Bronze/Silver pipeline structure is implemented and ready for official source values. Any placeholder raw values used during pipeline validation should be replaced before substantive interpretation.
+
+---
+
+## 11.3) Azerbaijan banking monthly pipeline
+
+### Bronze
+- `worldbank01.external_dev_stats_bronze.aze_banking_monthly_raw`
+
+### Silver
+- `worldbank01.external_dev_stats_silver.aze_banking_monthly`
+
+### Current variables
+- `bank_total_assets_mn_azn`
+- `bank_loans_customers_mn_azn`
+- `bank_deposits_total_mn_azn`
+
+### Purpose
+This layer standardizes monthly banking-sector indicators into a reusable analytical structure for downstream notebook and dashboard work.
+
+### Important note
+At the current stage, the Bronze/Silver pipeline structure is implemented and ready for official source values. Any placeholder raw values used during pipeline validation should be replaced before substantive interpretation.
+
+---
+
+## 11.4) Azerbaijan policy-rate monthly pipeline
+
+### Bronze
+- `worldbank01.external_dev_stats_bronze.aze_policy_rate_events_raw`
+
+### Silver
+- `worldbank01.external_dev_stats_silver.aze_policy_rate_monthly`
+
+### Current variables
+- `refinancing_rate`
+- `corridor_floor`
+- `corridor_ceiling`
+
+### Design
+This layer follows an event-based design:
+- raw policy decisions are stored as event records
+- the monthly table is created by forward-filling the active policy regime over monthly periods
+
+---
+
+## 11.5) Azerbaijan Gold mart
+
+### Gold table
+- `worldbank01.external_dev_stats.aze_bank_ops_monthly`
+
+### Current variables
+- `month`
+- `cpi_yoy`
+- `official_fx_reserves_usd_mn`
+- `bank_total_assets_mn_azn`
+- `bank_loans_customers_mn_azn`
+- `bank_deposits_total_mn_azn`
+- `refinancing_rate`
+- `corridor_floor`
+- `corridor_ceiling`
+- `usd_azn`
+- `eur_azn`
+- `gbp_azn`
+- `rub_azn`
+- `try_azn`
+- `kzt_azn`
+- `gel_azn`
+- `cny_azn`
+- `source_name`
+- `load_timestamp`
+
+### Purpose
+This table is designed as the integrated monthly mart for:
+- notebook-based signal engineering
+- dashboard development
+- Azerbaijan CPF-informed macro-financial interpretation
+- simplified banking decision-support demonstration
+
+### Important note
+This mart is intended as a decision-support demo. It does **not** attempt to replicate bank back-office procedures. Instead, it translates macro, policy, FX, and banking indicators into a monitoring-oriented financial-sector layer.
+
+---
+## 12) Big Mac Index pipeline
 This workflow uses the **Big Mac Index** as a supplementary external proxy for price levels, purchasing power, and relative currency valuation.
 
 ### Source
@@ -625,7 +803,6 @@ Tables:
 - `load_timestamp`
 
 ---
-
 ## Validation vs testing
 
 ### Validation
@@ -634,9 +811,9 @@ Validation checks the **current transformed dataset** before loading.
 Examples:
 - missing required columns
 - null country or year identifiers
-- duplicate country-year rows
+- duplicate country-year or month rows
 - null-heavy value columns
-- unusual year ranges
+- unusual year or date ranges
 
 Validation returns:
 - **errors** → stop the pipeline
@@ -651,40 +828,42 @@ Examples:
 - latest-value extraction returns the correct row
 - trade transformation returns the expected country-year record
 - climate aggregation returns the correct annual summary
-- governance dimension pivoting works correctly
+- WGI dimension pivoting works correctly
 - FAS series-code mapping works correctly
-- Global Findex curated variable mapping works correctly
+- FX XML parsing and monthly aggregation work correctly
+- policy-rate forward filling works correctly
+- Azerbaijan Gold mart integration behaves correctly
 
 Tests are implemented with `pytest`.
-
 ---
 
 ## BigQuery loading
-All current loads use:
+Most analytical tables are loaded with:
 
 - `WRITE_TRUNCATE`
 
-This means destination tables are fully refreshed on each run.
+The Azerbaijan FX raw table additionally supports append-oriented raw accumulation logic prior to monthly aggregation.
 
 ---
 
 ## Raw data landing convention
 
-Some workflows read directly from APIs, while others intentionally use manually downloaded source files in a raw landing area.
+Some workflows read directly from APIs or XML feeds, while others intentionally use manually maintained raw landing files.
 
 ### Raw landing folder
 ```text
 data/
 └── raw/
 ```
-
 - Current manually landed raw files
 data/raw/global_findex_country.csv
 data/raw/imf_fas.csv
 data/raw/wgi.xlsx
-
-- This design is intentional for source files whose download links, packaging, or bulk export formats may change over time.  
-Raw source files are intentionally not tracked in Git due to file size and source-distribution considerations. Place them manually in `data/raw/` before running the pipelines.
+data/raw/aze_macro_monthly.csv
+data/raw/aze_banking_monthly.csv
+data/raw/cbar_policy_rate_events.csv
+Dynamic raw ingestion currently implemented
+CBAR FX XML feed → aze_fx_daily_raw
 
 ## Repository structure
 ```text
@@ -725,9 +904,20 @@ wb_dev_data_pipeline/
 │   ├── main_city_temperature.py
 │   ├── extract_city_temperature.py
 │   ├── transform_city_temperature.py
-│   ├── main_big_mac.py
-│   ├── extract_big_mac.py
-│   ├── transform_big_mac.py
+│   ├── extract_aze_fx_rates.py
+│   ├── backfill_aze_fx_daily.py
+│   ├── extract_aze_macro_raw.py
+│   ├── extract_aze_banking_raw.py
+│   ├── extract_aze_policy_rate_raw.py
+│   ├── transform_aze_bank_ops.py
+│   ├── transform_aze_bank_ops_gold.py
+│   ├── transform_aze_macro_monthly.py
+│   ├── transform_aze_banking_monthly.py
+│   ├── transform_aze_policy_rate_monthly.py
+│   ├── main_aze_macro_monthly.py
+│   ├── main_aze_banking_monthly.py
+│   ├── main_aze_policy_rate_monthly.py
+│   ├── main_aze_bank_ops.py
 │   ├── validate.py
 │   ├── load_bigquery.py
 │   └── config.py
@@ -742,9 +932,10 @@ wb_dev_data_pipeline/
 │   ├── test_transform_imf_fas.py
 │   ├── test_transform_trade.py
 │   ├── test_transform_city_temperature.py
-│   ├── test_transform_big_mac.py
+│   └── test_transform_big_mac.py
 ├── sql/
 │   ├── create_dataset.sql
+│   ├── create_dataset_aze_layers.sql
 │   ├── create_tables_u5mr.sql
 │   ├── create_tables_girls_primary_completion.sql
 │   ├── create_tables_gdp_per_capita.sql
@@ -755,7 +946,12 @@ wb_dev_data_pipeline/
 │   ├── create_tables_imf_fas.sql
 │   ├── create_tables_trade.sql
 │   ├── create_tables_city_temperature.sql
-│   ├── create_tables_big_mac.sql
+│   ├── create_tables_aze_macro_bronze_silver.sql
+│   ├── create_tables_aze_banking_bronze_silver.sql
+│   ├── create_tables_aze_policy_bronze_silver.sql
+│   ├── create_tables_aze_fx_daily_raw.sql
+│   ├── create_tables_aze_fx_monthly.sql
+│   ├── create_tables_aze_bank_ops.sql
 │   └── sample_queries.sql
 ├── data/
 │   └── raw/
@@ -765,3 +961,4 @@ wb_dev_data_pipeline/
 └── .github/
     └── workflows/
         └── ci.yml
+'''

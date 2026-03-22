@@ -6,3 +6,7 @@ pytest
 google-cloud-bigquery
 pandas-gbq
 pyarrow
+lxml
+html5lib
+beautifulsoup4
+openpyxl
