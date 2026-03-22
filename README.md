@@ -16,7 +16,7 @@ This repository builds development-data pipelines that:
 > Sample R shiny dashboard
 
 <p align="center">
-  <img src="shiny_sample01.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
+  <img src="outputs/charts/shiny_sample01.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
 </p>
 
 Current implemented pipelines include:
