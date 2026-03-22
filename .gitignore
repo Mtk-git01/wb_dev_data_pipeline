@@ -22,7 +22,6 @@ Thumbs.db
 htmlcov/
 
 # Outputs
-outputs/tables/*
 outputs/charts/*
 !outputs/tables/.gitkeep
 !outputs/charts/.gitkeep

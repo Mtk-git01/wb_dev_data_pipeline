@@ -1,0 +1,7 @@
+effective_date,refinancing_rate,corridor_floor,corridor_ceiling,source_url
+2024-02-01,7.75,,,https://www.cbar.az/infoblocks/corridor_percent?language=en&year=2024
+2024-03-29,7.5,,,https://www.cbar.az/infoblocks/corridor_percent?language=en&year=2024
+2024-05-02,7.25,,,https://www.cbar.az/infoblocks/corridor_percent?language=en&year=2024
+2025-07-24,7.0,,,https://www.cbar.az/infoblocks/corridor_percent?language=en&year=2025
+2025-12-11,6.75,,,https://www.cbar.az/infoblocks/corridor_percent?language=en&year=2025
+2026-02-05,6.5,,,https://www.cbar.az/infoblocks/corridor_percent?language=en&year=2026
