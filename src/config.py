@@ -185,7 +185,7 @@ AZE_POLICY_RATE_RAW_PATH = "data/raw/cbar_policy_rate_events.csv"
 AZE_BANKING_MONTHLY_RAW_PATH = "data/raw/aze_banking_monthly.csv"
 AZE_FX_MONTHLY_RAW_PATH = "data/raw/aze_fx_monthly.csv"
 
-#
+#### csv
 AZE_FX_DAILY_RAW_TABLE = "aze_fx_daily_raw"
 AZE_FX_MONTHLY_TABLE = "aze_fx_monthly"
 
@@ -217,8 +217,51 @@ AZE_POLICY_RATE_RAW_PATH = "data/raw/cbar_policy_rate_events.csv"
 
 # Azerbaijan Gold mart
 AZE_BANK_OPS_TABLE_MONTHLY = "aze_bank_ops_monthly"
-AZE_BANK_OPS_SOURCE_NAME = "CBAR / SSC / banking monthly integration"
+#AZE_BANK_OPS_SOURCE_NAME = "CBAR / SSC / banking monthly integration"
+#AZE_BANK_OPS_SOURCE_NAME = "SSC / CBAR monthly integrated bank ops mart"
+AZE_BANK_OPS_SOURCE_NAME = "CBAR / SSC monthly macro-financial integration"
 
 # Existing FX dynamic layer
 AZE_FX_DAILY_RAW_TABLE = "aze_fx_daily_raw"
 AZE_FX_MONTHLY_TABLE = "aze_fx_monthly"
+
+###API
+# Azerbaijan layered datasets
+AZE_BRONZE_DATASET_ID = "external_dev_stats_bronze"
+AZE_SILVER_DATASET_ID = "external_dev_stats_silver"
+
+# Azerbaijan macro/policy tables
+AZE_MACRO_MONTHLY_RAW_TABLE = "aze_macro_monthly_raw"
+AZE_MACRO_MONTHLY_TABLE = "aze_macro_monthly"
+
+AZE_POLICY_RATE_EVENTS_RAW_TABLE = "aze_policy_rate_events_raw"
+AZE_POLICY_RATE_MONTHLY_TABLE = "aze_policy_rate_monthly"
+
+AZE_MACRO_MONTHLY_SOURCE_NAME = "Azerbaijan SSC / CBAR monthly macro integration"
+AZE_POLICY_RATE_SOURCE_NAME = "CBAR policy rate events"
+
+# Existing Azerbaijan FX / gold
+AZE_FX_DAILY_RAW_TABLE = "aze_fx_daily_raw"
+AZE_FX_MONTHLY_TABLE = "aze_fx_monthly"
+AZE_BANK_OPS_TABLE_MONTHLY = "aze_bank_ops_monthly"
+AZE_BANK_OPS_SOURCE_NAME = "CBAR / SSC monthly integration"
+
+# URLs
+AZE_CBAR_RESERVES_URL_TEMPLATE = "https://www.cbar.az/infoblocks/money_reserve_usd?language=en&year={year}"
+AZE_CBAR_REFINANCING_URL_TEMPLATE = "https://www.cbar.az/infoblocks/corridor_percent?language=en&year={year}"
+
+# SSC monthly macro pages (English)
+AZE_SSC_MACRO_URL_TEMPLATE = "https://www.stat.gov.az/news/macroeconomy.php?arxiv=1&lang=en&page={page}"
+AZE_SSC_MACRO_URL_LIVE = "https://www.stat.gov.az/news/macroeconomy.php?lang=en&page=1"
+
+# Azerbaijan banking monthly from XLSX bulletins
+AZE_BANKING_BULLETIN_XLSX_RAW_DIR = "data/raw/aze_banking_bulletins_xlsx"
+AZE_BANKING_MONTHLY_RAW_TABLE = "aze_banking_monthly_raw"
+AZE_BANKING_MONTHLY_TABLE = "aze_banking_monthly"
+AZE_BANKING_MONTHLY_SOURCE_NAME = "CBAR Statistical Bulletin Table 5.2 (XLSX)"
+
+# Azerbaijan policy monthly from XLSX bulletins
+AZE_POLICY_BULLETIN_XLSX_RAW_DIR = "data/raw/aze_banking_bulletins_xlsx"
+AZE_POLICY_RATE_EVENTS_RAW_TABLE = "aze_policy_rate_events_raw"
+AZE_POLICY_RATE_MONTHLY_TABLE = "aze_policy_rate_monthly"
+AZE_POLICY_RATE_SOURCE_NAME = "CBAR Statistical Bulletin Table 3.1 (XLSX)"

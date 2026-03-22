@@ -5,11 +5,7 @@ from src.config import AZE_BANKING_MONTHLY_SOURCE_NAME
 
 def transform_aze_banking_monthly(raw_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Expected raw columns:
-    - month
-    - bank_total_assets_mn_azn
-    - bank_loans_customers_mn_azn
-    - bank_deposits_total_mn_azn
+    Transform parsed Table 5.2 raw data into standardized monthly banking table.
     """
     df = raw_df.copy()
 
@@ -33,9 +29,9 @@ def transform_aze_banking_monthly(raw_df: pd.DataFrame) -> pd.DataFrame:
     for col in numeric_cols:
         df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    df = df.dropna(subset=["month"]).copy()
     df = (
-        df.sort_values("month")
+        df.dropna(subset=["month"])
+        .sort_values("month")
         .drop_duplicates(subset=["month"], keep="last")
         .reset_index(drop=True)
     )

@@ -16,11 +16,10 @@ def build_aze_bank_ops_monthly(
     for df in [fx, policy, macro, banking]:
         df["month"] = pd.to_datetime(df["month"], errors="coerce").dt.to_period("M").dt.to_timestamp()
 
-    # source/load columnsはGoldでは不要なので落とす
-    drop_cols = ["source_name", "load_timestamp"]
-    policy = policy.drop(columns=[c for c in drop_cols if c in policy.columns])
-    macro = macro.drop(columns=[c for c in drop_cols if c in macro.columns])
-    banking = banking.drop(columns=[c for c in drop_cols if c in banking.columns])
+    drop_cols = ["source_name", "load_timestamp", "source_file", "bulletin_period", "source_url"]
+    policy = policy.drop(columns=[c for c in drop_cols if c in policy.columns], errors="ignore")
+    macro = macro.drop(columns=[c for c in drop_cols if c in macro.columns], errors="ignore")
+    banking = banking.drop(columns=[c for c in drop_cols if c in banking.columns], errors="ignore")
 
     df = macro.merge(policy, on="month", how="left")
     df = df.merge(banking, on="month", how="left")

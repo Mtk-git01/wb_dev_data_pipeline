@@ -120,6 +120,7 @@ def main() -> None:
     output_dir = Path("outputs/tables")
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # FX raw / monthly
     ensure_table_exists(
         project_id=PROJECT_ID,
         dataset_id=EXTERNAL_DATASET_ID,
@@ -158,20 +159,23 @@ def main() -> None:
         table_id=AZE_FX_MONTHLY_TABLE,
     )
 
+    # Read Silver tables
     macro_monthly = read_table_from_bigquery(
         project_id=PROJECT_ID,
         dataset_id=AZE_SILVER_DATASET_ID,
         table_id=AZE_MACRO_MONTHLY_TABLE,
     )
-    banking_monthly = read_table_from_bigquery(
-        project_id=PROJECT_ID,
-        dataset_id=AZE_SILVER_DATASET_ID,
-        table_id=AZE_BANKING_MONTHLY_TABLE,
-    )
+
     policy_monthly = read_table_from_bigquery(
         project_id=PROJECT_ID,
         dataset_id=AZE_SILVER_DATASET_ID,
         table_id=AZE_POLICY_RATE_MONTHLY_TABLE,
+    )
+
+    banking_monthly = read_table_from_bigquery(
+        project_id=PROJECT_ID,
+        dataset_id=AZE_SILVER_DATASET_ID,
+        table_id=AZE_BANKING_MONTHLY_TABLE,
     )
 
     final_df = build_aze_bank_ops_monthly(
