@@ -265,3 +265,71 @@ AZE_POLICY_BULLETIN_XLSX_RAW_DIR = "data/raw/aze_banking_bulletins_xlsx"
 AZE_POLICY_RATE_EVENTS_RAW_TABLE = "aze_policy_rate_events_raw"
 AZE_POLICY_RATE_MONTHLY_TABLE = "aze_policy_rate_monthly"
 AZE_POLICY_RATE_SOURCE_NAME = "CBAR Statistical Bulletin Table 3.1 (XLSX)"
+
+## Azerbaijan add tables
+
+# Azerbaijan bulletin raw folder
+AZE_BANKING_BULLETIN_XLSX_RAW_DIR = "data/raw/aze_banking_bulletins_xlsx"
+
+# Bronze / Silver datasets
+AZE_BRONZE_DATASET_ID = "external_dev_stats_bronze"
+AZE_SILVER_DATASET_ID = "external_dev_stats_silver"
+
+# Silver sources
+AZE_BUSINESS_PORTFOLIO_PERIODIC_RAW_TABLE = "aze_business_portfolio_periodic_raw"
+AZE_BUSINESS_PORTFOLIO_PERIODIC_TABLE = "aze_business_portfolio_periodic"
+AZE_BUSINESS_PORTFOLIO_SOURCE_NAME = "CBAR statistical bulletin table 5.7"
+
+AZE_SECTORAL_LOANS_PERIODIC_RAW_TABLE = "aze_sectoral_loans_periodic_raw"
+AZE_SECTORAL_LOANS_PERIODIC_TABLE = "aze_sectoral_loans_periodic"
+AZE_SECTORAL_LOANS_SOURCE_NAME = "CBAR statistical bulletin table 2.8"
+
+AZE_NATIONAL_PAYMENT_SYSTEMS_PERIODIC_RAW_TABLE = "aze_national_payment_systems_periodic_raw"
+AZE_NATIONAL_PAYMENT_SYSTEMS_PERIODIC_TABLE = "aze_national_payment_systems_periodic"
+AZE_NATIONAL_PAYMENT_SYSTEMS_SOURCE_NAME = "CBAR statistical bulletin table 4.1"
+
+AZE_PAYMENT_SERVICE_MONTHLY_RAW_TABLE = "aze_payment_service_monthly_raw"
+AZE_PAYMENT_SERVICE_MONTHLY_TABLE = "aze_payment_service_monthly"
+AZE_PAYMENT_SERVICE_MONTHLY_SOURCE_NAME = "CBAR statistical bulletin table 4.3"
+
+AZE_CARD_TRANSACTIONS_MONTHLY_RAW_TABLE = "aze_card_transactions_monthly_raw"
+AZE_CARD_TRANSACTIONS_MONTHLY_TABLE = "aze_card_transactions_monthly"
+AZE_CARD_TRANSACTIONS_MONTHLY_SOURCE_NAME = "CBAR statistical bulletin table 4.5"
+
+AZE_CUSTOMER_ACCOUNTS_EBANKING_MONTHLY_RAW_TABLE = "aze_customer_accounts_ebanking_monthly_raw"
+AZE_CUSTOMER_ACCOUNTS_EBANKING_MONTHLY_TABLE = "aze_customer_accounts_ebanking_monthly"
+AZE_CUSTOMER_ACCOUNTS_EBANKING_MONTHLY_SOURCE_NAME = "CBAR statistical bulletin table 4.7"
+
+AZE_MACRO_MAIN_PERIODIC_RAW_TABLE = "aze_macro_main_periodic_raw"
+AZE_MACRO_MAIN_PERIODIC_TABLE = "aze_macro_main_periodic"
+AZE_MACRO_MAIN_PERIODIC_SOURCE_NAME = "CBAR statistical bulletin table 1.1"
+
+AZE_BALANCE_OF_PAYMENTS_PERIODIC_RAW_TABLE = "aze_balance_of_payments_periodic_raw"
+AZE_BALANCE_OF_PAYMENTS_PERIODIC_TABLE = "aze_balance_of_payments_periodic"
+AZE_BALANCE_OF_PAYMENTS_SOURCE_NAME = "CBAR statistical bulletin table 1.4"
+
+AZE_FOREIGN_TRADE_PERIODIC_RAW_TABLE = "aze_foreign_trade_periodic_raw"
+AZE_FOREIGN_TRADE_PERIODIC_TABLE = "aze_foreign_trade_periodic"
+AZE_FOREIGN_TRADE_SOURCE_NAME = "CBAR statistical bulletin table 1.5"
+
+AZE_MOVABLE_PROPERTY_REGISTRY_PERIODIC_RAW_TABLE = "aze_movable_property_registry_periodic_raw"
+AZE_MOVABLE_PROPERTY_REGISTRY_PERIODIC_TABLE = "aze_movable_property_registry_periodic"
+AZE_MOVABLE_PROPERTY_REGISTRY_SOURCE_NAME = "CBAR statistical bulletin table 8"
+
+AZE_NPL_STRUCTURE_PERIODIC_RAW_TABLE = "aze_npl_structure_periodic_raw"
+AZE_NPL_STRUCTURE_PERIODIC_TABLE = "aze_npl_structure_periodic"
+AZE_NPL_STRUCTURE_SOURCE_NAME = "CBAR statistical bulletin table 5.6"
+
+AZE_INTEREST_RATES_PERIODIC_RAW_TABLE = "aze_interest_rates_periodic_raw"
+AZE_INTEREST_RATES_PERIODIC_TABLE = "aze_interest_rates_periodic"
+AZE_INTEREST_RATES_SOURCE_NAME = "CBAR statistical bulletin table 3.2"
+
+# Gold marts
+AZE_CREDIT_ACCESS_AND_STABILITY_TABLE = "aze_credit_access_and_stability_periodic"
+AZE_CREDIT_ACCESS_AND_STABILITY_SOURCE_NAME = "Azerbaijan credit access and stability gold mart"
+
+AZE_DIGITAL_FINANCE_TABLE = "aze_digital_finance_periodic"
+AZE_DIGITAL_FINANCE_SOURCE_NAME = "Azerbaijan digital finance gold mart"
+
+AZE_ECONOMIC_DIVERSIFICATION_TABLE = "aze_economic_diversification_periodic"
+AZE_ECONOMIC_DIVERSIFICATION_SOURCE_NAME = "Azerbaijan economic diversification gold mart"

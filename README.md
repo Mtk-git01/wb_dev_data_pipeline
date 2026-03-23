@@ -5,13 +5,13 @@ Reproducible ETL pipelines for public development indicators, governance, financ
 ## Overview
 This repository builds development-data pipelines that:
 
-- extract public international data from source-oriented datasets, bulk files, APIs, Web scraping, XML feeds, and official web publications.   
-(e.g.,[Central Bank of the Republic of Azerbaijan](https://www.cbar.az/home?language=en), [unicef](https://data.unicef.org/resources/un-inter-agency-group-for-child-mortality-estimation-unigme/), [IMF](https://www.imf.org/en/home), [UN Comtrade](https://comtradeplus.un.org/))
+- extract public international data from source-oriented datasets, bulk files, APIs, web scraping, XML feeds, and official web publications  
+  (e.g., [Central Bank of the Republic of Azerbaijan](https://www.cbar.az/home?language=en), [UNICEF](https://data.unicef.org/resources/un-inter-agency-group-for-child-mortality-estimation-unigme/), [IMF](https://www.imf.org/en/home), [UN Comtrade](https://comtradeplus.un.org/))
 - transform raw inputs into curated analytical tables using **Bronze / Silver / Gold** architecture
 - validate structural and data-quality conditions
 - load outputs into BigQuery
 - support downstream cross-country, city-level, and country-specific analysis
-- support [Azerbaijan CPF](https://openknowledge.worldbank.org/entities/publication/a7c9d0a2-ef37-4089-872a-4c66d5659516) focused analytical and simplified banking decision-support demos
+- support [Azerbaijan CPF](https://openknowledge.worldbank.org/entities/publication/a7c9d0a2-ef37-4089-872a-4c66d5659516)-focused analytical and simplified banking decision-support demos
 
 > Sample R shiny dashboard
 
@@ -19,37 +19,26 @@ This repository builds development-data pipelines that:
   <img src="outputs/charts/shiny_sample01.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
 </p>
 
-Current implemented pipelines include:
-
-### Azerbaijan-focused macro-financial monitoring layer
-- CBAR FX daily raw ingestion and monthly aggregation
-- SSC monthly macro indicators
-- Azerbaijan banking-sector monthly indicators from CBAR Statistical Bulletin Table 5.2
-- Azerbaijan policy corridor / refinancing-rate monthly series from CBAR Statistical Bulletin Table 3.1 and policy publications
-- Integrated Azerbaijan bank-operations monthly mart
-
-### World Bank API-based indicators
-- Girls’ primary completion rate
-- GDP per capita
-- Net ODA received per capita
-- Learning-adjusted years of schooling (LAYS)
-
-### World Bank-managed datasets
-- Worldwide Governance Indicators (WGI)
-- Global Findex
-
-### External source-oriented datasets
-- Under-five mortality (U5MR) from UN-IGME
-- Financial Access Survey (FAS) from IMF
-- Merchandise trade flows from UN Comtrade
-- City temperature time series from Open-Meteo
-- Big Mac Index from The Economist
-
 ---
 
-## Azerbaijan central bank and official-statistics layer first
+## Azerbaijan central bank and official-statistics layer
 
-The Azerbaijan-focused component is intentionally positioned as the first country-specific layer in this repository because it demonstrates an end-to-end **Bronze / Silver / Gold** architecture built from official public sources.
+The Azerbaijan-focused component is intentionally positioned as the **first country-specific layer** in this repository because it demonstrates an end-to-end **Bronze / Silver / Gold** architecture built from official public sources.
+
+This layer combines:
+- CBAR FX data
+- SSC monthly macro pages
+- CBAR Statistical Bulletin workbook tables
+- CBAR policy corridor / refinancing-rate information
+- integrated Gold marts for macro-financial and development-oriented interpretation
+
+It is designed not only as a data-engineering example, but also as an analytical foundation for:
+- CPF-style country interpretation
+- digital-finance progress monitoring
+- credit-access and MSME finance analysis
+- financial-stability analysis
+- external-sector and diversification monitoring
+- simplified banking decision-support demos
 
 ### Data engineering design
 
@@ -59,33 +48,121 @@ Source-faithful raw landing tables.
 Current Azerbaijan Bronze inputs include:
 - CBAR FX daily raw snapshots from the public XML feed
 - SSC monthly macro pages parsed from public HTML pages
-- CBAR Statistical Bulletin workbooks manually landed in raw folders and parsed into raw monthly banking and policy tables
+- CBAR Statistical Bulletin workbooks manually landed in raw folders and parsed into raw bulletin tables
+- policy-rate event raw tables from CBAR policy publications
 
 #### Silver
-Cleaned and standardized monthly analytical tables.
+Cleaned and standardized analytical tables at monthly or periodic grain.
 
 Current Azerbaijan Silver outputs include:
+
+##### Existing core monitoring tables
+- `aze_fx_monthly`
 - `aze_macro_monthly`
 - `aze_banking_monthly`
 - `aze_policy_rate_monthly`
 
-#### Gold
-Integrated monthly mart for notebook and dashboard use.
+**Access to finance / credit structure**
+- `aze_business_portfolio_periodic` ← Table 5.7 (CBAR Report)
+- `aze_sectoral_loans_periodic` ← Table 2.8
+- `aze_npl_structure_periodic` ← Table 5.6
+- `aze_interest_rates_periodic` ← Table 3.2
+- `aze_movable_property_registry_periodic` ← Table 8
 
-Current Azerbaijan Gold output:
+**Digital finance / payments**
+- `aze_national_payment_systems_periodic` ← Table 4.1
+- `aze_payment_service_monthly` ← Table 4.3
+- `aze_card_transactions_monthly` ← Table 4.5
+- `aze_customer_accounts_ebanking_monthly` ← Table 4.7
+
+**Economic diversification / external sector**
+- `aze_macro_main_periodic` ← Table 1.1
+- `aze_balance_of_payments_periodic` ← Table 1.4
+- `aze_foreign_trade_periodic` ← Table 1.5
+
+#### Gold
+Integrated country-level marts for dashboarding, notebooks, and analytical interpretation.
+
+Current Azerbaijan Gold outputs include:
+
+##### Existing Gold table
 - `aze_bank_ops_monthly`
 
-### Official source URLs
+##### Newly added Gold marts
+- `aze_credit_access_and_stability_periodic`
+- `aze_digital_finance_periodic`
+- `aze_economic_diversification_periodic`
 
-#### Central Bank of the Republic of Azerbaijan (CBAR)
+---
+
+## Azerbaijan analytical themes covered by the bulletin layer
+
+The newly added bulletin tables are organized into three business-facing Gold marts.
+
+### 1) Credit access and financial stability
+This mart supports analysis of:
+- MSME and entrepreneurial-subject financing
+- sectoral allocation of lending
+- average interest-rate conditions
+- non-performing loan structure
+- movable-collateral registry usage as a proxy for secured-finance infrastructure
+
+Source bulletin tables:
+- **Table 5.7** Information about the breakdown of the business portfolio on entrepreneurial subjects
+- **Table 2.8** Sectoral breakdown of loans
+- **Table 5.6** Information on the structure of non-performing loans of banks
+- **Table 3.2** Average interest rates on time deposits and loans
+- **Table 8** Statistics of encumbrances recorded in the Registry about movable property
+
+Gold output:
+- `worldbank01.external_dev_stats.aze_credit_access_and_stability_periodic`
+
+### 2) Digital finance and payments infrastructure
+This mart supports analysis of:
+- national payment-system usage
+- ATM / POS / contactless terminal penetration
+- card transaction adoption
+- internet and mobile banking adoption
+
+Source bulletin tables:
+- **Table 4.1** Transactions through National Payment Systems
+- **Table 4.3** Statistics on the payment service network belonging to the statistical unit
+- **Table 4.5** Transactions with debit and credit cards
+- **Table 4.7** Structure of customers` bank accounts and electronic banking
+
+Gold output:
+- `worldbank01.external_dev_stats.aze_digital_finance_periodic`
+
+### 3) Economic diversification and external-sector monitoring
+This mart supports analysis of:
+- non-oil growth and macro performance
+- external balances
+- oil / gas versus non-oil external-sector structure
+- trade diversification and external integration
+
+Source bulletin tables:
+- **Table 1.1** Main macroeconomic indicators
+- **Table 1.4** Balance of payments of the Republic of Azerbaijan
+- **Table 1.5** Foreign trade of the Republic of Azerbaijan
+
+Gold output:
+- `worldbank01.external_dev_stats.aze_economic_diversification_periodic`
+
+---
+
+## Official source URLs
+
+### Central Bank of the Republic of Azerbaijan (CBAR)
 - FX rates page: `https://www.cbar.az/currency/rates?language=en`
 - Statistical Bulletin page: `https://cbar.az/pages/publications-researches/statistic-bulletin/`
 - Example policy press release: `https://www.cbar.az/press-release-5417/central-bank-cuts-refinancing-rate-and-other-interest-rate-corridor-parameters-by-025-pp?language=en`
 
-#### State Statistical Committee of Azerbaijan (SSC)
+### State Statistical Committee of Azerbaijan (SSC)
 - Monthly macroeconomic indicators page: `https://www.stat.gov.az/news/macroeconomy.php?lang=en&page=1`
 
-### Azerbaijan source-to-table mapping
+---
+
+## Azerbaijan source-to-table mapping
 
 | Source | Access mode | Bronze | Silver | Gold usage |
 |---|---|---|---|---|
@@ -93,9 +170,30 @@ Current Azerbaijan Gold output:
 | SSC monthly macro pages | Web scraping / HTML parsing | `aze_macro_monthly_raw` | `aze_macro_monthly` | CPI, reserves, banking proxies |
 | CBAR Statistical Bulletin Table 5.2 | Raw workbook landing + parsing | `aze_banking_monthly_raw` | `aze_banking_monthly` | total assets, loans, deposits |
 | CBAR Statistical Bulletin Table 3.1 and policy publications | Raw workbook landing + parsing / web policy sources | `aze_policy_rate_events_raw` | `aze_policy_rate_monthly` | corridor floor, refinancing rate, corridor ceiling |
+| CBAR Statistical Bulletin Table 5.7 | Raw workbook landing + parsing | `aze_business_portfolio_periodic_raw` | `aze_business_portfolio_periodic` | credit access and MSME finance mart |
+| CBAR Statistical Bulletin Table 2.8 | Raw workbook landing + parsing | `aze_sectoral_loans_periodic_raw` | `aze_sectoral_loans_periodic` | sectoral lending block |
+| CBAR Statistical Bulletin Table 5.6 | Raw workbook landing + parsing | `aze_npl_structure_periodic_raw` | `aze_npl_structure_periodic` | asset-quality / stability block |
+| CBAR Statistical Bulletin Table 3.2 | Raw workbook landing + parsing | `aze_interest_rates_periodic_raw` | `aze_interest_rates_periodic` | lending / deposit rate block |
+| CBAR Statistical Bulletin Table 8 | Raw workbook landing + parsing | `aze_movable_property_registry_periodic_raw` | `aze_movable_property_registry_periodic` | collateral-registry block |
+| CBAR Statistical Bulletin Table 4.1 | Raw workbook landing + parsing | `aze_national_payment_systems_periodic_raw` | `aze_national_payment_systems_periodic` | digital-finance mart |
+| CBAR Statistical Bulletin Table 4.3 | Raw workbook landing + parsing | `aze_payment_service_monthly_raw` | `aze_payment_service_monthly` | ATM / POS / contactless block |
+| CBAR Statistical Bulletin Table 4.5 | Raw workbook landing + parsing | `aze_card_transactions_monthly_raw` | `aze_card_transactions_monthly` | debit / credit card block |
+| CBAR Statistical Bulletin Table 4.7 | Raw workbook landing + parsing | `aze_customer_accounts_ebanking_monthly_raw` | `aze_customer_accounts_ebanking_monthly` | internet / mobile banking block |
+| CBAR Statistical Bulletin Table 1.1 | Raw workbook landing + parsing | `aze_macro_main_periodic_raw` | `aze_macro_main_periodic` | diversification mart |
+| CBAR Statistical Bulletin Table 1.4 | Raw workbook landing + parsing | `aze_balance_of_payments_periodic_raw` | `aze_balance_of_payments_periodic` | external-balance block |
+| CBAR Statistical Bulletin Table 1.5 | Raw workbook landing + parsing | `aze_foreign_trade_periodic_raw` | `aze_foreign_trade_periodic` | trade structure block |
 
-### Why this matters analytically
-This Azerbaijan layer is designed to show how official central-bank and statistical-agency publications can be transformed into a monthly macro-financial monitoring mart for CPF-oriented analysis and simplified banking decision-support.
+---
+
+## Why this matters analytically
+This Azerbaijan layer shows how official central-bank and statistical-agency publications can be transformed into analytical marts that support:
+
+- macro-financial monitoring
+- digital-finance and payments analysis
+- credit-access and MSME-finance interpretation
+- financial-stability analysis
+- diversification and non-oil growth assessment
+- simplified decision-support demos aligned with World Bank CPF-style narratives
 
 ---
 
@@ -134,27 +232,77 @@ Dataset:
 
 This dataset contains indicators retrieved directly from the World Bank API and other World Bank-managed source datasets.
 
-### 2) External source-oriented dataset
+### 2) External source-oriented Gold dataset
 Dataset:
 - `worldbank01.external_dev_stats`
 
-This dataset contains analytical tables derived from external public sources and Gold-level Azerbaijan monitoring marts.
+This dataset contains:
+- external public-source analytical Gold tables
+- Azerbaijan Gold marts
+- bulletin-derived integrated country monitoring outputs
+
+Current Azerbaijan Gold tables include:
+- `aze_bank_ops_monthly`
+- `aze_credit_access_and_stability_periodic`
+- `aze_digital_finance_periodic`
+- `aze_economic_diversification_periodic`
 
 ### 3) Azerbaijan Bronze dataset
 Dataset:
 - `worldbank01.external_dev_stats_bronze`
 
-This dataset contains source-faithful raw landing tables for the Azerbaijan bank-operations layer.
+This dataset contains source-faithful raw landing tables for Azerbaijan external-source pipelines, including raw bulletin extractions.
 
 ### 4) Azerbaijan Silver dataset
 Dataset:
 - `worldbank01.external_dev_stats_silver`
 
-This dataset contains cleaned and standardized monthly tables for the Azerbaijan bank-operations layer.
+This dataset contains cleaned and standardized Azerbaijan intermediate tables at monthly / quarterly / yearly analytical grain before Gold-level integration.
 
 ---
 
-## Current pipelines
+## Current implemented pipelines
+
+### Azerbaijan-focused macro-financial and bulletin monitoring layer
+- CBAR FX daily raw ingestion and monthly aggregation
+- SSC monthly macro indicators
+- Azerbaijan banking-sector monthly indicators from CBAR Statistical Bulletin Table 5.2
+- Azerbaijan policy corridor / refinancing-rate monthly series from CBAR Statistical Bulletin Table 3.1 and policy publications
+- Azerbaijan business portfolio / MSME finance pipeline from CBAR Table 5.7
+- Azerbaijan sectoral loans pipeline from CBAR Table 2.8
+- Azerbaijan NPL structure pipeline from CBAR Table 5.6
+- Azerbaijan interest-rate pipeline from CBAR Table 3.2
+- Azerbaijan movable-property registry pipeline from CBAR Table 8
+- Azerbaijan national payment systems pipeline from CBAR Table 4.1
+- Azerbaijan payment service network pipeline from CBAR Table 4.3
+- Azerbaijan card transactions pipeline from CBAR Table 4.5
+- Azerbaijan customer accounts and e-banking pipeline from CBAR Table 4.7
+- Azerbaijan main macroeconomic indicators pipeline from CBAR Table 1.1
+- Azerbaijan balance of payments pipeline from CBAR Table 1.4
+- Azerbaijan foreign trade pipeline from CBAR Table 1.5
+- Integrated Azerbaijan bank-operations monthly mart
+- Integrated Azerbaijan credit-access and stability mart
+- Integrated Azerbaijan digital-finance mart
+- Integrated Azerbaijan economic-diversification mart
+
+### World Bank API-based indicators
+- Girls’ primary completion rate
+- GDP per capita
+- Net ODA received per capita
+- Learning-adjusted years of schooling (LAYS)
+
+### World Bank-managed datasets
+- Worldwide Governance Indicators (WGI)
+- Global Findex
+
+### External source-oriented datasets
+- Under-five mortality (U5MR) from UN-IGME
+- Financial Access Survey (FAS) from IMF
+- Merchandise trade flows from UN Comtrade
+- City temperature time series from Open-Meteo
+- Big Mac Index from The Economist
+
+---
 
 ## 1) U5MR pipeline
 The U5MR workflow uses the **UN-IGME observational database** as the upstream source, rather than relying only on downstream redistribution through World Bank Open Data.
@@ -588,7 +736,7 @@ Tables:
 
 ---
 
-## 12) Azerbaijan bank-operations monitoring layer
+## 12) Azerbaijan bank-operations and bulletin monitoring layer
 
 This repository includes an Azerbaijan-focused macro-financial monitoring layer designed as a **simplified decision-support demo** rather than a replication of back-office banking procedures.
 
@@ -601,19 +749,19 @@ This layer is designed to support:
 - liquidity and funding interpretation
 - lending stance interpretation
 - CPF-informed financial-sector discussion
-- dashboard-ready monthly monitoring
+- dashboard-ready monthly and periodic monitoring
 
 ### Layering design
-The Azerbaijan bank-operations component follows a Bronze / Silver / Gold structure.
+The Azerbaijan bank-operations and bulletin component follows a Bronze / Silver / Gold structure.
 
 #### Bronze
 Source-faithful raw landing tables.
 
 #### Silver
-Cleaned and standardized monthly analytical tables.
+Cleaned and standardized monthly and periodic analytical tables.
 
 #### Gold
-Integrated monthly mart for notebook and dashboard use.
+Integrated marts for notebook and dashboard use.
 
 ---
 
@@ -740,41 +888,65 @@ This layer is built from CBAR bulletin workbooks parsed from Table 3.1 and stand
 
 ---
 
-## 12.5) Azerbaijan Gold mart
+## 12.5) Azerbaijan bulletin-based additional Silver pipelines
 
-### Gold table
+### Access to finance / financial stability
+- `worldbank01.external_dev_stats_silver.aze_business_portfolio_periodic`
+- `worldbank01.external_dev_stats_silver.aze_sectoral_loans_periodic`
+- `worldbank01.external_dev_stats_silver.aze_npl_structure_periodic`
+- `worldbank01.external_dev_stats_silver.aze_interest_rates_periodic`
+- `worldbank01.external_dev_stats_silver.aze_movable_property_registry_periodic`
+
+### Digital finance
+- `worldbank01.external_dev_stats_silver.aze_national_payment_systems_periodic`
+- `worldbank01.external_dev_stats_silver.aze_payment_service_monthly`
+- `worldbank01.external_dev_stats_silver.aze_card_transactions_monthly`
+- `worldbank01.external_dev_stats_silver.aze_customer_accounts_ebanking_monthly`
+
+### Economic diversification / external sector
+- `worldbank01.external_dev_stats_silver.aze_macro_main_periodic`
+- `worldbank01.external_dev_stats_silver.aze_balance_of_payments_periodic`
+- `worldbank01.external_dev_stats_silver.aze_foreign_trade_periodic`
+
+### Design notes
+These tables are parsed from CBAR Statistical Bulletin workbook layouts that may mix:
+- year rows with month rows beneath them
+- yearly and quarterly structures
+- table-specific row-label conventions
+
+To support these parsers, shared helper logic is centralized in:
+- `src/extract_aze_bulletin_common.py`
+
+This helper is used for:
+- bulletin filename date parsing
+- sheet matching
+- year / month / quarter reconstruction
+- row-label normalization
+- safe periodic merges
+- deduplication helpers
+
+---
+
+## 12.6) Azerbaijan Gold marts
+
+### Gold tables
 - `worldbank01.external_dev_stats.aze_bank_ops_monthly`
-
-### Current variables
-- `month`
-- `cpi_yoy`
-- `official_fx_reserves_usd_mn`
-- `bank_total_assets_mn_azn`
-- `bank_loans_customers_mn_azn`
-- `bank_deposits_total_mn_azn`
-- `refinancing_rate`
-- `corridor_floor`
-- `corridor_ceiling`
-- `usd_azn`
-- `eur_azn`
-- `gbp_azn`
-- `rub_azn`
-- `try_azn`
-- `kzt_azn`
-- `gel_azn`
-- `cny_azn`
-- `source_name`
-- `load_timestamp`
+- `worldbank01.external_dev_stats.aze_credit_access_and_stability_periodic`
+- `worldbank01.external_dev_stats.aze_digital_finance_periodic`
+- `worldbank01.external_dev_stats.aze_economic_diversification_periodic`
 
 ### Purpose
-This table is designed as the integrated monthly mart for:
+These tables are designed as integrated marts for:
 - notebook-based signal engineering
 - dashboard development
 - Azerbaijan CPF-informed macro-financial interpretation
+- digital-finance progress tracking
+- credit-access and financial-stability interpretation
+- diversification and external-sector analysis
 - simplified banking decision-support demonstration
 
 ### Important note
-This mart is intended as a decision-support demo. It does **not** attempt to replicate bank back-office procedures. Instead, it translates macro, policy, FX, and banking indicators into a monitoring-oriented financial-sector layer.
+These marts are intended as decision-support demos. They do **not** attempt to replicate bank back-office procedures. Instead, they translate macro, policy, FX, banking, payment, lending, and external-sector indicators into monitoring-oriented analytical layers.
 
 ---
 
@@ -890,15 +1062,58 @@ wb_dev_data_pipeline/
 │   ├── extract_aze_ssc_macro_api.py
 │   ├── extract_aze_banking_bulletin_xlsx_raw.py
 │   ├── extract_aze_policy_bulletin_xlsx_raw.py
+│   ├── extract_aze_bulletin_common.py
+│   ├── extract_aze_business_portfolio_xlsx_raw.py
+│   ├── extract_aze_sectoral_loans_xlsx_raw.py
+│   ├── extract_aze_national_payment_systems_xlsx_raw.py
+│   ├── extract_aze_payment_service_xlsx_raw.py
+│   ├── extract_aze_card_transactions_xlsx_raw.py
+│   ├── extract_aze_customer_accounts_ebanking_xlsx_raw.py
+│   ├── extract_aze_macro_main_xlsx_raw.py
+│   ├── extract_aze_balance_of_payments_xlsx_raw.py
+│   ├── extract_aze_foreign_trade_xlsx_raw.py
+│   ├── extract_aze_movable_property_registry_xlsx_raw.py
+│   ├── extract_aze_npl_structure_xlsx_raw.py
+│   ├── extract_aze_interest_rates_xlsx_raw.py
 │   ├── transform_aze_bank_ops.py
 │   ├── transform_aze_bank_ops_gold.py
 │   ├── transform_aze_macro_monthly.py
 │   ├── transform_aze_banking_monthly.py
 │   ├── transform_aze_policy_rate_monthly.py
+│   ├── transform_aze_business_portfolio_periodic.py
+│   ├── transform_aze_sectoral_loans_periodic.py
+│   ├── transform_aze_national_payment_systems_periodic.py
+│   ├── transform_aze_payment_service_monthly.py
+│   ├── transform_aze_card_transactions_monthly.py
+│   ├── transform_aze_customer_accounts_ebanking_monthly.py
+│   ├── transform_aze_macro_main_periodic.py
+│   ├── transform_aze_balance_of_payments_periodic.py
+│   ├── transform_aze_foreign_trade_periodic.py
+│   ├── transform_aze_movable_property_registry_periodic.py
+│   ├── transform_aze_npl_structure_periodic.py
+│   ├── transform_aze_interest_rates_periodic.py
+│   ├── transform_aze_credit_access_and_stability_gold.py
+│   ├── transform_aze_digital_finance_gold.py
+│   ├── transform_aze_economic_diversification_gold.py
 │   ├── main_aze_macro_monthly.py
 │   ├── main_aze_banking_monthly.py
 │   ├── main_aze_policy_rate_monthly.py
 │   ├── main_aze_bank_ops.py
+│   ├── main_aze_business_portfolio_periodic.py
+│   ├── main_aze_sectoral_loans_periodic.py
+│   ├── main_aze_national_payment_systems_periodic.py
+│   ├── main_aze_payment_service_monthly.py
+│   ├── main_aze_card_transactions_monthly.py
+│   ├── main_aze_customer_accounts_ebanking_monthly.py
+│   ├── main_aze_macro_main_periodic.py
+│   ├── main_aze_balance_of_payments_periodic.py
+│   ├── main_aze_foreign_trade_periodic.py
+│   ├── main_aze_movable_property_registry_periodic.py
+│   ├── main_aze_npl_structure_periodic.py
+│   ├── main_aze_interest_rates_periodic.py
+│   ├── main_aze_credit_access_and_stability_gold.py
+│   ├── main_aze_digital_finance_gold.py
+│   ├── main_aze_economic_diversification_gold.py
 │   ├── validate.py
 │   ├── load_bigquery.py
 │   └── config.py
@@ -913,7 +1128,8 @@ wb_dev_data_pipeline/
 │   ├── test_transform_imf_fas.py
 │   ├── test_transform_trade.py
 │   ├── test_transform_city_temperature.py
-│   └── test_transform_big_mac.py
+│   ├── test_transform_big_mac.py
+│   └── test_transform_aze_bulletin_extended.py
 ├── sql/
 │   ├── create_dataset.sql
 │   ├── create_dataset_aze_layers.sql
@@ -934,6 +1150,7 @@ wb_dev_data_pipeline/
 │   ├── create_tables_aze_fx_daily_raw.sql
 │   ├── create_tables_aze_fx_monthly.sql
 │   ├── create_tables_aze_bank_ops.sql
+│   ├── create_aze_bulletin_all_tables.sql
 │   └── sample_queries.sql
 ├── data/
 │   └── raw/
@@ -955,11 +1172,16 @@ This repository supports:
 - price-level and purchasing-power comparison
 - Azerbaijan CPF-informed country analysis
 - macro-to-banking signal design
-- simplified monthly financial-sector monitoring marts
+- simplified monthly and periodic financial-sector monitoring marts
 - dashboard-ready operational decision-support layers
+- digital-finance progress tracking
+- MSME finance and sectoral credit interpretation
+- external-balance and diversification monitoring
 
 ---
 
 ## Current limitations
 - Some Azerbaijan source pages and bulletin workbooks are scraped from public HTML or XLSX publications and may require parser adjustments if the publication layout changes.
 - The Azerbaijan bank-operations component is a simplified monitoring and decision-support demo, not a replication of internal banking procedures.
+- Some bulletin tables mix yearly, quarterly, and monthly structures, so parser maintenance may be needed when the workbook layout changes.
+- Gold marts depend on prior Silver-table creation and consistent `period_date` / `period_type` normalization.
