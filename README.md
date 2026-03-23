@@ -13,7 +13,9 @@ This repository builds development-data pipelines that:
 - support downstream cross-country, city-level, and country-specific analysis
 - support [Azerbaijan CPF](https://openknowledge.worldbank.org/entities/publication/a7c9d0a2-ef37-4089-872a-4c66d5659516)-focused analytical and simplified banking decision-support demos
 
-> Sample R shiny dashboard
+---
+The Azerbaijan CPF dashboard indicator set was partly informed by [William Easterly’s The Elusive Quest for Growth](https://en.wikipedia.org/wiki/The_Elusive_Quest_for_Growth), particularly its focus on incentives, macroeconomic stability, and institutions as foundations for durable growth.
+> Sample R shiny dashboard image
 
 <p align="center">
   <img src="outputs/charts/shiny_sample01.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
