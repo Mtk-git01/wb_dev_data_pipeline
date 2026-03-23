@@ -1,6 +1,6 @@
 # World Bank Development Statistics Pipeline and Azerbaijan CPF Analysis
 
-Reproducible ETL pipelines for public development indicators, governance, financial access, trade statistics, climate-related external data, price-level proxies, and Azerbaijan-focused macro-financial monitoring, with validation, BigQuery loading, and analysis-ready outputs.
+This project implements a layered analytical data warehouse (Raw/Bronze/Silver/Gold) for public development indicators, governance, financial access, trade statistics, climate-related external data, price-level proxies, and Azerbaijan-focused macro-financial monitoring, with validation, BigQuery loading, and analysis-ready outputs.
 
 ## Overview
 This repository builds development-data pipelines that:
