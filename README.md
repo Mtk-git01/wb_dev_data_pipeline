@@ -18,7 +18,7 @@ The Azerbaijan CPF dashboard indicator set was partly informed by [William Easte
 > Sample R shiny dashboard image
 
 <p align="center">
-  <img src="outputs/images/shiny_sample0.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
+  <img src="outputs/images/shiny_sample1.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
 </p>
 
 ---
