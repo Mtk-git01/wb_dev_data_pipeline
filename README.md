@@ -14,10 +14,13 @@ This repository builds development-data pipelines that:
 - support [Azerbaijan CPF](https://openknowledge.worldbank.org/entities/publication/a7c9d0a2-ef37-4089-872a-4c66d5659516)-focused analytical and simplified banking decision-support demos
 
 ---
+## Interactive Shiny dashboard for Azerbaijan CPF-style macro-financial analysis
+
 The Azerbaijan CPF dashboard indicator set was partly informed by [William Easterly’s The Elusive Quest for Growth](https://en.wikipedia.org/wiki/The_Elusive_Quest_for_Growth), particularly its focus on incentives, macroeconomic stability, and institutions as foundations for durable growth.
 
 - [Azerbaijan-CPF Shiny dashboard](https://mtk01.shinyapps.io/azerbaijan-cpf-dashboard/)
-> How to use this for a World Bank CPF-style discussion
+
+### How to use this for a World Bank CPF-style discussion
 1. **Macro incentives:** show whether inflation, lending rates, and NPL dynamics create or weaken incentives for long-term private investment.
 2. **Digital inclusion:** show whether payment rails, POS density, e-commerce, and mobile banking are lowering friction for households and MSMEs.
 3. **Structural transformation:** compare non-oil GDP growth and non-oil export trends with oil-linked external balances.
