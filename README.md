@@ -14,7 +14,7 @@ This repository builds development-data pipelines that:
 - support [Azerbaijan CPF](https://openknowledge.worldbank.org/entities/publication/a7c9d0a2-ef37-4089-872a-4c66d5659516)-focused analytical and simplified banking decision-support demos
 
 ---
-## Interactive Shiny dashboard for Azerbaijan CPF-style macro-financial analysis
+## Dashboard for Azerbaijan CPF-style macro-financial analysis
 
 The Azerbaijan CPF dashboard indicator set was partly informed by [William Easterly’s The Elusive Quest for Growth](https://en.wikipedia.org/wiki/The_Elusive_Quest_for_Growth), particularly its focus on incentives, macroeconomic stability, and institutions as foundations for durable growth.
 
@@ -164,12 +164,12 @@ Gold output:
 ## Official source URLs
 
 ### Central Bank of the Republic of Azerbaijan (CBAR)
-- FX rates page: `https://www.cbar.az/currency/rates?language=en`
-- Statistical Bulletin page: `https://cbar.az/pages/publications-researches/statistic-bulletin/`
-- Example policy press release: `https://www.cbar.az/press-release-5417/central-bank-cuts-refinancing-rate-and-other-interest-rate-corridor-parameters-by-025-pp?language=en`
+- FX rates page: https://www.cbar.az/currency/rates?language=en
+- Statistical Bulletin page: https://www.cbar.az/page-40/statistical-bulletin
+- Example policy press release: https://www.cbar.az/press-release-5417/central-bank-cuts-refinancing-rate-and-other-interest-rate-corridor-parameters-by-025-pp?language=en
 
 ### State Statistical Committee of Azerbaijan (SSC)
-- Monthly macroeconomic indicators page: `https://www.stat.gov.az/news/macroeconomy.php?lang=en&page=1`
+- Monthly macroeconomic indicators page: https://www.stat.gov.az/news/macroeconomy.php?lang=en&page=1
 
 ---
 
@@ -316,7 +316,7 @@ This dataset contains cleaned and standardized Azerbaijan intermediate tables at
 ---
 
 ## 1) U5MR pipeline
-The U5MR workflow uses the **UN-IGME observational database** as the upstream source, rather than relying only on downstream redistribution through World Bank Open Data.
+The U5MR workflow uses the [UN-IGME observational database](https://data.unicef.org/topic/child-survival/under-five-mortality/) as the upstream source, rather than relying only on downstream redistribution through World Bank Open Data.
 
 This reflects an explicit **data lineage** choice:
 - use the original source-side dataset
@@ -490,7 +490,7 @@ Tables:
 This workflow uses the **Worldwide Governance Indicators (WGI)** as a World Bank-managed governance dataset covering six core dimensions of institutional quality.
 
 ### Source
-- World Bank WGI bulk file
+- [World Bank WGI bulk file](https://www.worldbank.org/en/publication/worldwide-governance-indicators/documentation#4)
 
 ### Current governance dimensions included
 - Voice and Accountability
@@ -549,7 +549,7 @@ Tables:
 This workflow uses the **World Bank Global Findex** country-level dataset as a complementary source for financial inclusion analysis.
 
 ### Source
-- World Bank Global Findex
+- [World Bank Global Findex(csv)](https://www.worldbank.org/en/publication/globalfindex/download-data)
 
 ### Why this matters analytically
 Global Findex provides demand-side indicators on account ownership, financial access, digital payments, mobile money, and related financial inclusion outcomes.
@@ -602,7 +602,7 @@ Tables:
 This workflow uses the **IMF Financial Access Survey (FAS)** as a complementary source for supply-side and institutional financial access statistics.
 
 ### Source
-- IMF Financial Access Survey (FAS)
+- [IMF Financial Access Survey (FAS)](https://data.imf.org/en/datasets/IMF.STA:FAS)
 
 ### Current curated subset
 The current implementation keeps a small curated subset of annual series from the FAS bulk file, including:
@@ -657,22 +657,14 @@ Tables:
 ## 9) Trade pipeline
 This repository also includes a trade-data workflow built from **UN Comtrade**, chosen as a more source-oriented and raw-data-near input for international merchandise trade analysis.
 
+### Source
+- [UN COmtrade API](https://comtradeplus.un.org/)
+
 ### Why UN Comtrade
 UN Comtrade is treated here as a primary-data-near trade source for internationally reported merchandise trade flows.
 
 ### Current trade scope
-The current implementation focuses on a curated set of country-product-flow combinations used for development-oriented analysis and Azerbaijan/Kazakhstan-focused extensions.
-
-### Why this matters analytically
-This trade pipeline can be joined with other development indicators in the repository, such as:
-- U5MR
-- girls’ primary completion
-- GDP per capita
-- Net ODA received per capita
-- LAYS
-- WGI
-- Global Findex
-- IMF FAS
+The current implementation focuses on a curated set of country-product-flow combinations used for development-oriented analysis and Azerbaijan/Kazakhstan-focused extensions(e.g., Oil, Railway parts, Telecom equipment).
 
 ### BigQuery tables
 Dataset:
@@ -779,7 +771,7 @@ Integrated marts for notebook and dashboard use.
 ## 12.1) Azerbaijan FX ingestion
 
 ### Source
-- CBAR exchange-rate XML feed: `https://www.cbar.az/currency/rates?language=en`
+- CBAR exchange-rate XML feed: https://www.cbar.az/currency/rates?language=en
 
 ### Design
 - daily raw FX snapshots are ingested dynamically from the official CBAR XML feed
@@ -820,7 +812,7 @@ The FX layer supports dynamic ingestion and historical backfill. It remains in t
 ## 12.2) Azerbaijan macro monthly pipeline
 
 ### Source
-- SSC monthly macroeconomic indicators page: `https://www.stat.gov.az/news/macroeconomy.php?lang=en&page=1`
+- SSC monthly macroeconomic indicators page: https://www.stat.gov.az/news/macroeconomy.php?lang=en&page=1
 
 ### Bronze
 - `worldbank01.external_dev_stats_bronze.aze_macro_monthly_raw`
@@ -842,7 +834,7 @@ This layer is built from SSC monthly macro pages parsed through public web scrap
 ## 12.3) Azerbaijan banking monthly pipeline
 
 ### Source
-- CBAR Statistical Bulletin page: `https://cbar.az/pages/publications-researches/statistic-bulletin/`
+- CBAR Statistical Bulletin page: https://cbar.az/pages/publications-researches/statistic-bulletin/
 - Table 5.2 Overview of Banking Sector from monthly bulletin workbooks
 
 ### Bronze
@@ -879,9 +871,9 @@ If the same analytical month appears in multiple bulletin files, the row from th
 ## 12.4) Azerbaijan policy-rate monthly pipeline
 
 ### Source
-- CBAR Statistical Bulletin page: `https://cbar.az/pages/publications-researches/statistic-bulletin/`
+- CBAR Statistical Bulletin page: https://cbar.az/pages/publications-researches/statistic-bulletin/
 - Table 3.1 from bulletin workbooks
-- latest policy press release page for manual reference: `https://www.cbar.az/press-release-5417/central-bank-cuts-refinancing-rate-and-other-interest-rate-corridor-parameters-by-025-pp?language=en`
+- latest policy press release page for manual reference: https://www.cbar.az/press-release-5417/central-bank-cuts-refinancing-rate-and-other-interest-rate-corridor-parameters-by-025-pp?language=en
 
 ### Bronze
 - `worldbank01.external_dev_stats_bronze.aze_policy_rate_events_raw`
