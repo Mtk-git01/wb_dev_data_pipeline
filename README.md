@@ -13,6 +13,17 @@ This repository builds development-data pipelines that:
 - support downstream cross-country, city-level, and country-specific analysis
 - support [Azerbaijan CPF](https://openknowledge.worldbank.org/entities/publication/a7c9d0a2-ef37-4089-872a-4c66d5659516)-focused analytical and simplified banking decision-support demos
 
+## World Bank-style project cycle context
+
+| Stage | Relevance to this repository |
+|---|---|
+| Identification | Supports CPF-style diagnostics and baseline indicator framing |
+| Preparation | Builds validated analytical tables from public-source data |
+| Appraisal | Supports evidence packs, benchmarking, and monitoring logic |
+| Negotiation / Approval | Provides structured analytical inputs for documentation |
+| Implementation | Feeds dashboards and periodic monitoring views |
+| Completion / Validation & Evaluation | Supports retrospective indicator-based assessment |
+
 ---
 ## Dashboard for Azerbaijan CPF-style macro-financial analysis
 
