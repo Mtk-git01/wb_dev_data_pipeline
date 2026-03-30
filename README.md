@@ -41,7 +41,7 @@ The Azerbaijan CPF dashboard indicator set was partly informed by [William Easte
   <img src="outputs/images/shiny_sample2.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
 </p>
 
-- Azerbaijan-CPF PJ cycle dashboard  
+- [Azerbaijan-CPF Project Cycle dashboard](https://mtk01.shinyapps.io/azerbaijan-project-cycle-dashboard/)  
 <p align="center">
   <img src="outputs/images/shiny_sample3.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
 </p>
