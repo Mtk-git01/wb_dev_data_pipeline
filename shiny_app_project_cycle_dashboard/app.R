@@ -48,8 +48,9 @@ challenges_df <- data.frame(
 )
 
 kpi_df <- data.frame(
-  category = c(rep("HLO1", 7), rep("HLO2", 8)),
-  objective = c(rep("Resilience & Sustainability", 7), rep("Productivity & Better Jobs", 8)),
+  # 最初の7つがHLO1、次の7つがHLO2、最後の1つ(Landowners)はHLO1
+  category = c(rep("HLO1", 7), rep("HLO2", 7), "HLO1"),
+  objective = c(rep("Resilience & Sustainability", 7), rep("Productivity & Better Jobs", 7), "Resilience & Sustainability"),
   indicator = c(
     "Renewable energy capacity added",
     "Renewable energy share in total capacity",
@@ -67,8 +68,9 @@ kpi_df <- data.frame(
     "Broadband internet users",
     "Landowners with irrigation / drainage services"
   ),
-  baseline = c(0, 20, NA, 0, 0, 0, 0, 0, NA, 14.9, 0, 0, 0, 8.8, NA),
-  current = c(0, 20, 0, 0, 0, 0, 0, 0, NA, 14.9, 0, 0, 0, 8.8, NA),
+  # GHG(3番目)とLandowners(15番目)のNAを0に修正
+  baseline = c(0, 20, 0, 0, 0, 0, 0, 0, NA, 14.9, 0, 0, 0, 8.8, 0),
+  current = c(0, 20, 0, 0, 0, 0, 0, 0, NA, 14.9, 0, 0, 0, 8.8, 0),
   target = c(0.24, 34, -327000, 1000000, 1.5, 20, 100, 100000, 800, 67, 1300, 100000, 56, 9.4, 146000),
   unit = c(
     "GW", "%", "tCO2eq/year", "kVA", "million people", "%", "million m3",
@@ -281,7 +283,7 @@ risk_points <- data.frame(
 ui <- page_navbar(
   title = "Azerbaijan WBG Operations Dashboard (FY25-29)",
   theme = bs_theme(version = 5, bootswatch = "flatly"),
-
+  
   header = tags$head(
     tags$style(HTML("
       .navbar { font-weight: 600; }
@@ -325,7 +327,7 @@ ui <- page_navbar(
       .table-sm td, .table-sm th { font-size: 13px; }
     "))
   ),
-
+  
   sidebar = sidebar(
     width = 300,
     h5("CPF Reference"),
@@ -347,7 +349,7 @@ ui <- page_navbar(
         "Top metric cards and the risk heatmap have been adjusted to improve readability."
     )
   ),
-
+  
   nav_panel(
     "Executive Summary",
     layout_columns(
@@ -386,7 +388,7 @@ ui <- page_navbar(
     ),
     card(full_screen = TRUE, card_header("Development challenges"), card_body(DTOutput("challenges_table")))
   ),
-
+  
   nav_panel(
     "WB Project Cycle",
     card(
@@ -416,7 +418,7 @@ ui <- page_navbar(
            )))
     )
   ),
-
+  
   nav_panel(
     "CPF KPI Tracker",
     layout_columns(
@@ -426,16 +428,16 @@ ui <- page_navbar(
         full_screen = TRUE,
         card_header("Selected KPI notes"),
         card_body(tags$table(class = "table table-striped table-sm",
-          tags$thead(tags$tr(tags$th("Indicator"), tags$th("Target year"), tags$th("Note"))),
-          tags$tbody(lapply(seq_len(nrow(kpi_df)), function(i) {
-            tags$tr(tags$td(kpi_df$indicator[i]), tags$td(kpi_df$target_year[i]), tags$td(kpi_df$note[i]))
-          }))
+                             tags$thead(tags$tr(tags$th("Indicator"), tags$th("Target year"), tags$th("Note"))),
+                             tags$tbody(lapply(seq_len(nrow(kpi_df)), function(i) {
+                               tags$tr(tags$td(kpi_df$indicator[i]), tags$td(kpi_df$target_year[i]), tags$td(kpi_df$note[i]))
+                             }))
         ))
       )
     ),
     card(full_screen = TRUE, card_header("Detailed KPI table"), card_body(DTOutput("kpi_table")))
   ),
-
+  
   nav_panel(
     "Project Pipeline",
     layout_columns(
@@ -452,7 +454,7 @@ ui <- page_navbar(
     ),
     card(full_screen = TRUE, card_header("Pipeline detail table"), card_body(DTOutput("pipeline_table")))
   ),
-
+  
   nav_panel(
     "Financial Sector",
     layout_columns(
@@ -474,7 +476,7 @@ ui <- page_navbar(
       card(full_screen = TRUE, card_header("Macro / financial snapshot"), card_body(DTOutput("macro_cards_table")))
     )
   ),
-
+  
   nav_panel(
     "Macroeconomics",
     layout_columns(
@@ -490,7 +492,7 @@ ui <- page_navbar(
       card(full_screen = TRUE, card_header("Selected macro forecasts"), card_body(DTOutput("macro_forecast_table")))
     )
   ),
-
+  
   nav_panel(
     "Risk Register",
     layout_columns(
@@ -518,34 +520,34 @@ ui <- page_navbar(
 # ------------------------------------------------------------------------------
 
 server <- function(input, output, session) {
-
+  
   filtered_kpi <- reactive({
     if (input$kpi_category == "All") return(kpi_df)
     dplyr::filter(kpi_df, category == input$kpi_category)
   })
-
+  
   filtered_pipeline <- reactive({
     if (input$pipeline_institution == "All") return(pipeline_df)
     dplyr::filter(pipeline_df, institution == input$pipeline_institution)
   })
-
+  
   output$finance_donut <- renderPlotly({
     plot_ly(financial_commitments_df, labels = ~category, values = ~amount, type = "pie", hole = 0.55,
             textinfo = "label+percent") %>%
       layout(showlegend = FALSE)
   })
-
+  
   output$challenges_table <- renderDT({
     datatable(challenges_df, rownames = FALSE,
               options = list(pageLength = 10, dom = "tip", scrollX = TRUE))
   })
-
+  
   output$cycle_table <- renderDT({
     datatable(cycle_df, rownames = FALSE,
               options = list(pageLength = 6, dom = "tip", scrollX = TRUE),
               colnames = c("Stage", "What happens", "How this repository / dashboard supports it"))
   })
-
+  
   output$kpi_bar <- renderPlotly({
     df <- filtered_kpi()
     plot_ly(df, x = ~indicator, y = ~target, type = "bar", name = "Target", marker = list(color = "#1B4F72")) %>%
@@ -553,7 +555,7 @@ server <- function(input, output, session) {
       layout(barmode = "group", xaxis = list(title = "", tickangle = -35), yaxis = list(title = "Value"),
              legend = list(orientation = "h", x = 0.2, y = 1.15))
   })
-
+  
   output$kpi_table <- renderDT({
     df <- filtered_kpi() %>%
       mutate(
@@ -563,71 +565,71 @@ server <- function(input, output, session) {
         progress_display = ifelse(is.na(progress_pct), "N/A", paste0(round(progress_pct, 1), "%"))
       ) %>%
       select(category, indicator, baseline_display, current_display, target_display, target_year, progress_display, note)
-
+    
     datatable(df, rownames = FALSE,
               options = list(pageLength = 15, scrollX = TRUE),
               colnames = c("Block", "Indicator", "Baseline", "Current", "Target", "Target year", "Progress", "Note"))
   })
-
+  
   output$pipeline_stage_plot <- renderPlotly({
     df <- filtered_pipeline() %>% group_by(stage) %>% summarise(amount_usd_m = sum(amount_usd_m), .groups = "drop")
     plot_ly(df, x = ~stage, y = ~amount_usd_m, type = "bar", marker = list(color = "#2874A6")) %>%
       layout(yaxis = list(title = "USD million"), xaxis = list(title = ""))
   })
-
+  
   output$pipeline_focus_plot <- renderPlotly({
     df <- filtered_pipeline()
     plot_ly(df, x = ~focus, y = ~amount_usd_m, color = ~institution, type = "bar") %>%
       layout(barmode = "group", yaxis = list(title = "USD million"), xaxis = list(title = "", tickangle = -20))
   })
-
+  
   output$pipeline_table <- renderDT({
     datatable(filtered_pipeline(), rownames = FALSE,
               options = list(pageLength = 10, scrollX = TRUE))
   })
-
+  
   output$budget_plot <- renderPlotly({
     plot_ly(budget_df, x = ~indicator, y = ~full_year_2025, type = "bar", name = "2025 Full Year", marker = list(color = "#1B4F72")) %>%
       add_trace(y = ~jan_2026, name = "Jan 2026", marker = list(color = "#1ABC9C")) %>%
       layout(barmode = "group", yaxis = list(title = "mln AZN"), xaxis = list(title = ""))
   })
-
+  
   output$macro_cards_table <- renderDT({
     datatable(macro_cards_df, rownames = FALSE,
               options = list(pageLength = 10, dom = "tip", scrollX = TRUE),
               colnames = c("Metric", "Value", "Note"))
   })
-
+  
   output$loan_trend_plot <- renderPlotly({
     plot_ly(loan_trend_df, x = ~period, y = ~total_loans, type = "scatter", mode = "lines+markers", name = "Total loans", line = list(color = "#1B4F72")) %>%
       add_trace(y = ~private_banks, name = "Private banks", line = list(color = "#1ABC9C")) %>%
       add_trace(y = ~state_owned_banks, name = "State-owned banks", line = list(color = "#F39C12")) %>%
       layout(yaxis = list(title = "mln AZN"), xaxis = list(title = ""))
   })
-
+  
   output$npl_ref_plot <- renderPlotly({
     npl_df <- data.frame(period = c("Target / reference", "Actual Jan 2026"), value = c(3.0, 2.6))
     plot_ly(npl_df, x = ~period, y = ~value, type = "bar", marker = list(color = c("#FAD7A0", "#E67E22"))) %>%
       layout(yaxis = list(title = "%"), xaxis = list(title = ""))
   })
-
+  
   output$sector_pie_plot <- renderPlotly({
     plot_ly(sector_df, labels = ~sector, values = ~balance, type = "pie", hole = 0.45, textinfo = "label+percent") %>%
       layout(showlegend = FALSE)
   })
-
+  
   output$macro_forecast_table <- renderDT({
     datatable(macro_forecast_df, rownames = FALSE,
               options = list(dom = "tip", pageLength = 10, scrollX = TRUE))
   })
-
+  
   output$risk_table <- renderDT({
     datatable(risk_df, rownames = FALSE,
               options = list(dom = "tip", pageLength = 10),
               colnames = c("Risk Category", "Rating", "Meaning")) %>%
       formatStyle("rating", backgroundColor = styleEqual(c("M", "S"), c("#E8E3D3", "#F3E1C6")))
   })
-
+  
   output$risk_heatmap <- renderPlotly({
     bg_shapes <- list(
       list(type = "rect", x0 = 0.5, x1 = 2.5, y0 = 0.5, y1 = 2.5, fillcolor = "#EAF2F8", line = list(width = 0), layer = "below"),
@@ -635,7 +637,7 @@ server <- function(input, output, session) {
       list(type = "rect", x0 = 0.5, x1 = 2.5, y0 = 2.5, y1 = 4.5, fillcolor = "#FDEDEC", line = list(width = 0), layer = "below"),
       list(type = "rect", x0 = 2.5, x1 = 4.5, y0 = 2.5, y1 = 4.5, fillcolor = "#FDF2E9", line = list(width = 0), layer = "below")
     )
-
+    
     plot_ly() %>%
       add_trace(
         data = risk_points,

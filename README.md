@@ -2,6 +2,17 @@
 
 This project implements a layered analytical data warehouse (Raw/Bronze/Silver/Gold) for public development indicators, governance, financial access, trade statistics, climate-related external data, price-level proxies, and Azerbaijan-focused macro-financial monitoring, with validation, BigQuery loading, and analysis-ready outputs.
 
+## Quick navigation
+
+- [Live dashboards](#live-dashboards)
+- [Azerbaijan CPF dashboard: analytical design rationale](#azerbaijan-cpf-dashboard-analytical-design-rationale)
+- [World Bank-style project cycle context](#world-bank-style-project-cycle-context)
+- [Azerbaijan central bank and official-statistics layer](#azerbaijan-central-bank-and-official-statistics-layer)
+- [BigQuery datasets](#bigquery-datasets)
+- [Current implemented pipelines](#current-implemented-pipelines)
+- [Repository structure](#repository-structure)
+- [Suggested analytical use cases](#suggested-analytical-use-cases)
+
 ## Overview
 This repository builds development-data pipelines that:
 
@@ -25,9 +36,10 @@ This repository builds development-data pipelines that:
 | Completion / Validation & Evaluation | Supports retrospective indicator-based assessment |
 
 ---
+
 ## Dashboard for Azerbaijan CPF-style macro-financial analysis
 
-The Azerbaijan CPF dashboard indicator set was partly informed by [William Easterly’s The Elusive Quest for Growth](https://en.wikipedia.org/wiki/The_Elusive_Quest_for_Growth), particularly its focus on incentives, macroeconomic stability, and institutions as foundations for durable growth.
+The Azerbaijan CPF dashboard indicator set was partly informed by [William Easterly's The Elusive Quest for Growth](https://en.wikipedia.org/wiki/The_Elusive_Quest_for_Growth), particularly its focus on incentives, macroeconomic stability, and institutions as foundations for durable growth — consistent with Azerbaijan's oil-dependent structural context.
 
 - [Azerbaijan-CPF Shiny dashboard](https://mtk01.shinyapps.io/azerbaijan-cpf-dashboard/)
 
@@ -41,10 +53,41 @@ The Azerbaijan CPF dashboard indicator set was partly informed by [William Easte
   <img src="outputs/images/shiny_sample2.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
 </p>
 
-- [Azerbaijan-CPF Project Cycle dashboard](https://mtk01.shinyapps.io/azerbaijan-project-cycle-dashboard/)  
+- [Azerbaijan-CPF Project Cycle dashboard](https://mtk01.shinyapps.io/azerbaijan-project-cycle-dashboard/)
 <p align="center">
   <img src="outputs/images/shiny_sample3.png" alt="Sample: Azerbaijan indicator dashboard" width="700">
 </p>
+
+---
+
+## Azerbaijan CPF dashboard: analytical design rationale
+
+The dashboards are built around the
+[Azerbaijan Country Partnership Framework FY25-29](https://openknowledge.worldbank.org/bitstreams/99f07530-002f-440e-b864-69a1a0133625/download)
+(Report No. 195625-AZ, December 2024, IBRD / IFC / MIGA), and track its two High-Level Outcomes:
+
+- **HLO 1 — Increased Resilience & Sustainability**: renewable energy capacity, GHG reduction, water access, irrigation yield, desalination
+- **HLO 2 — Increased Productivity & Better Jobs**: MSME finance, jobs, vocational training, transport beneficiaries, broadband users
+
+### How the pipeline connects to the CPF diagnostic themes
+
+Each of the CPF's core diagnostic themes maps directly to a BigQuery analytical layer in this repository:
+
+| CPF diagnostic theme | BigQuery tables |
+|---|---|
+| Oil dependency and diversification | `aze_economic_diversification_periodic`, `trade_country_year_long` (HS 2709 / 2711 vs non-oil exports) |
+| Financial sector vulnerability | `aze_credit_access_and_stability_periodic` (NPL structure, interest rates, MSME loan balance, movable collateral registry) |
+| Digital finance and inclusion | `aze_digital_finance_periodic` (POS / ATM density, mobile banking adoption, card transaction volume) |
+| Macroeconomic stability | `aze_fx_monthly`, `aze_macro_monthly`, `aze_policy_rate_monthly` |
+| Governance and institutions | `wgi_country_year` (WB Worldwide Governance Indicators, six dimensions) |
+| Human capital | `lays_country_year`, `girls_primary_completion_country_year` |
+| External sector and trade | `aze_balance_of_payments_periodic`, `aze_foreign_trade_periodic`, `trade_country_year_long` |
+
+### Current dashboard architecture
+
+The Shiny dashboards currently use manually curated snapshots from the CBAR Statistical Bulletin (January 2026, No. 310) and the CPF document. The BigQuery pipeline ingests and transforms the same underlying source tables automatically through Python ETL scripts, producing the Silver and Gold analytical marts listed above.
+
+The dashboards demonstrate the **analytical narrative and CPF framing**. The pipeline demonstrates **engineering reproducibility, data lineage, and production-ready ETL design**. Connecting the two — so that the dashboards read live from BigQuery rather than from manually maintained snapshots — is the intended next step in the architecture.
 
 ---
 
@@ -313,7 +356,7 @@ This dataset contains cleaned and standardized Azerbaijan intermediate tables at
 - Integrated Azerbaijan economic-diversification mart
 
 ### World Bank API-based indicators
-- Girls’ primary completion rate
+- Girls' primary completion rate
 - GDP per capita
 - Net ODA received per capita
 - Learning-adjusted years of schooling (LAYS)
@@ -347,7 +390,6 @@ This reflects an explicit **data lineage** choice:
 - fill missing internal years using **linear interpolation**
 - flag interpolated years using `is_interpolated`
 
-### Linear interpolation
 ### Note on missing data
 The WDI documentation notes that development data may contain missing values and may not always be fully comparable across countries and years, and that multiple aggregation methods are used depending on the indicator. In this project, I use a simple **linear interpolation** method for demonstration purposes rather than attempting to reproduce the official aggregation rules. [WDI Sources and Methods](https://datatopics.worldbank.org/world-development-indicators/sources-and-methods.html).
 
@@ -381,7 +423,7 @@ Table:
 
 ---
 
-## 2) Girls’ primary completion pipeline
+## 2) Girls' primary completion pipeline
 This workflow retrieves:
 
 - **Primary completion rate, female (% of relevant age group)**
@@ -572,7 +614,7 @@ Global Findex provides demand-side indicators on account ownership, financial ac
 In this repository it is treated as a complementary dataset that can be joined with:
 - GDP per capita
 - U5MR
-- girls’ primary completion
+- girls' primary completion
 - LAYS
 - WGI
 - trade indicators
@@ -674,13 +716,13 @@ Tables:
 This repository also includes a trade-data workflow built from **UN Comtrade**, chosen as a more source-oriented and raw-data-near input for international merchandise trade analysis.
 
 ### Source
-- [UN COmtrade API](https://comtradeplus.un.org/)
+- [UN Comtrade API](https://comtradeplus.un.org/)
 
 ### Why UN Comtrade
 UN Comtrade is treated here as a primary-data-near trade source for internationally reported merchandise trade flows.
 
 ### Current trade scope
-The current implementation focuses on a curated set of country-product-flow combinations used for development-oriented analysis and Azerbaijan/Kazakhstan-focused extensions(e.g., Oil, Railway parts, Telecom equipment).
+The current implementation focuses on a curated set of country-product-flow combinations used for development-oriented analysis and Azerbaijan/Kazakhstan-focused extensions (e.g., Oil, Railway parts, Telecom equipment).
 
 ### BigQuery tables
 Dataset:
@@ -1041,6 +1083,10 @@ wb_dev_data_pipeline/
 ├── requirements.txt
 ├── .gitignore
 ├── pytest.ini
+├── shiny_app_cpf_dashboard/
+│   └── app.R
+├── shiny_app_project_cycle_dashboard/
+│   └── app.R
 ├── src/
 │   ├── __init__.py
 │   ├── main_u5mr.py
@@ -1204,3 +1250,4 @@ This repository supports:
 - The Azerbaijan bank-operations component is a simplified monitoring and decision-support demo, not a replication of internal banking procedures.
 - Some bulletin tables mix yearly, quarterly, and monthly structures, so parser maintenance may be needed when the workbook layout changes.
 - Gold marts depend on prior Silver-table creation and consistent `period_date` / `period_type` normalization.
+- The Shiny dashboards currently use manually maintained snapshots; live BigQuery integration is the intended next step.
