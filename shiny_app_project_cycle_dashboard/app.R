@@ -4,6 +4,7 @@ library(plotly)
 library(dplyr)
 library(DT)
 library(scales)
+library(stringr)
 
 # ==============================================================================
 # Azerbaijan CPF / WBG Operations Dashboard
@@ -296,35 +297,43 @@ ui <- page_navbar(
         min-height: 170px;
       }
       .metric-box {
-        min-height: 150px !important;
+        min-height: 130px !important;
+        overflow: hidden !important;
       }
       .metric-box .bslib-value-box-value,
       .metric-box .value-box-value {
-        font-size: clamp(2.2rem, 3.4vw, 4rem) !important;
-        line-height: 1.02 !important;
+        font-size: clamp(1.4rem, 2.2vw, 2.4rem) !important;
+        line-height: 1.1 !important;
         white-space: nowrap !important;
-        overflow: visible !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
       }
       .metric-box .bslib-value-box-title,
       .metric-box .value-box-title {
-        font-size: 1.05rem !important;
+        font-size: 0.85rem !important;
         line-height: 1.2 !important;
         white-space: normal !important;
-        overflow: visible !important;
+        overflow: hidden !important;
       }
       .metric-box .bslib-value-box-showcase,
       .metric-box .value-box-showcase {
-        font-size: 0.95rem !important;
+        font-size: 0.8rem !important;
         line-height: 1.1 !important;
-        white-space: nowrap !important;
+        white-space: normal !important;
+        overflow: hidden !important;
       }
       .metric-box .card-body,
       .metric-box .bslib-value-box,
       .metric-box .value-box-grid,
       .metric-box .bslib-fill {
+        overflow: hidden !important;
+      }
+      .metric-row {
+        margin-bottom: 1rem !important;
+      }
+      .bslib-page-fill > .bslib-gap-spacing {
         overflow: visible !important;
       }
-      .table-sm td, .table-sm th { font-size: 13px; }
     "))
   ),
   
@@ -361,6 +370,7 @@ ui <- page_navbar(
     ),
     layout_columns(
       col_widths = c(8, 4),
+      heights_equal = "row",
       card(
         full_screen = TRUE,
         card_header("Strategic framing: challenges and two high-level outcomes"),
@@ -384,7 +394,7 @@ ui <- page_navbar(
           )
         )
       ),
-      card(full_screen = TRUE, card_header("Financial commitments mix"), card_body(plotlyOutput("finance_donut", height = "300px")))
+      card(full_screen = TRUE, card_header("Financial commitments mix"), card_body(plotlyOutput("finance_donut", height = "260px")))
     ),
     card(full_screen = TRUE, card_header("Development challenges"), card_body(DTOutput("challenges_table")))
   ),
@@ -422,8 +432,12 @@ ui <- page_navbar(
   nav_panel(
     "CPF KPI Tracker",
     layout_columns(
-      col_widths = c(6, 6),
-      card(full_screen = TRUE, card_header("KPI targets vs current values"), card_body(plotlyOutput("kpi_bar", height = "420px"))),
+      col_widths = c(7, 5),
+      card(
+        full_screen = TRUE,
+        card_header("CPF key indicators: current vs target"),
+        card_body(plotlyOutput("kpi_bar", height = "440px"))
+      ),
       card(
         full_screen = TRUE,
         card_header("Selected KPI notes"),
@@ -533,8 +547,13 @@ server <- function(input, output, session) {
   
   output$finance_donut <- renderPlotly({
     plot_ly(financial_commitments_df, labels = ~category, values = ~amount, type = "pie", hole = 0.55,
-            textinfo = "label+percent") %>%
-      layout(showlegend = FALSE)
+            textinfo = "percent",
+            hovertemplate = "%{label}<br>US$%{value}M<br>%{percent}<extra></extra>") %>%
+      layout(
+        showlegend = TRUE,
+        legend = list(orientation = "v", x = 1.0, y = 0.5, font = list(size = 10)),
+        margin = list(l = 10, r = 120, t = 10, b = 10)
+      )
   })
   
   output$challenges_table <- renderDT({
@@ -549,11 +568,154 @@ server <- function(input, output, session) {
   })
   
   output$kpi_bar <- renderPlotly({
-    df <- filtered_kpi()
-    plot_ly(df, x = ~indicator, y = ~target, type = "bar", name = "Target", marker = list(color = "#1B4F72")) %>%
-      add_trace(y = ~current, name = "Current", marker = list(color = "#1ABC9C")) %>%
-      layout(barmode = "group", xaxis = list(title = "", tickangle = -35), yaxis = list(title = "Value"),
-             legend = list(orientation = "h", x = 0.2, y = 1.15))
+    
+    meta <- data.frame(
+      indicator = c(
+        "Renewable energy share in total capacity",
+        "Population with access to safe water",
+        "Crop yield increase in irrigated lands",
+        "New / improved jobs created",
+        "MSME outstanding loan balance",
+        "Loans to women-led SMEs (Bank Respublika)",
+        "Broadband internet users",
+        "Vocational training graduates"
+      ),
+      short_label = c(
+        "RE share in capacity (%)",
+        "Safe water access (mn people)",
+        "Crop yield increase (%)",
+        "Jobs created (k)",
+        "MSME loan balance (USD mn)",
+        "Women-led SME loans (USD mn)",
+        "Broadband users (mn)",
+        "Vocational graduates (k)"
+      ),
+      divisor = c(1, 1, 1, 1000, 1, 1, 1, 1000),
+      bar_color = c(
+        "#27AE60", "#1ABC9C", "#2ECC71",
+        "#E67E22", "#D35400", "#E74C3C", "#8E44AD", "#9B59B6"
+      ),
+      stringsAsFactors = FALSE
+    )
+    
+    df_filtered <- filtered_kpi() %>%
+      dplyr::inner_join(meta, by = "indicator") %>%
+      dplyr::mutate(
+        target_sc  = target / divisor,
+        current_sc = ifelse(is.na(current), 0, current / divisor),
+        hover_tgt = paste0(
+          "<b>", indicator, "</b><br>Target: ",
+          scales::comma(target_sc, accuracy = 0.1)
+        ),
+        hover_cur = paste0(
+          "<b>", indicator, "</b><br>Current: ",
+          scales::comma(current_sc, accuracy = 0.1)
+        )
+      )
+    
+    df_hlo1 <- df_filtered %>% filter(category == "HLO1")
+    df_hlo2 <- df_filtered %>% filter(category == "HLO2")
+    
+    p1 <- plot_ly(df_hlo1) %>%
+      add_trace(
+        type = "bar",
+        orientation = "h",
+        x = ~target_sc,
+        y = ~reorder(short_label, target_sc),
+        name = "Target",
+        legendgroup = "Target",
+        marker = list(
+          color = ~bar_color,
+          opacity = 0.2,
+          line = list(color = ~bar_color, width = 1)
+        ),
+        hovertemplate = ~paste0(hover_tgt, "<extra></extra>"),
+        showlegend = TRUE
+      ) %>%
+      add_trace(
+        type = "bar",
+        orientation = "h",
+        x = ~current_sc,
+        y = ~reorder(short_label, target_sc),
+        name = "Current",
+        legendgroup = "Current",
+        marker = list(
+          color = ~bar_color,
+          opacity = 0.8
+        ),
+        hovertemplate = ~paste0(hover_cur, "<extra></extra>"),
+        showlegend = TRUE
+      ) %>%
+      layout(
+        xaxis = list(title = "", zeroline = FALSE),
+        yaxis = list(title = "", tickfont = list(size = 10))
+      )
+    
+    p2 <- plot_ly(df_hlo2) %>%
+      add_trace(
+        type = "bar",
+        orientation = "h",
+        x = ~target_sc,
+        y = ~reorder(short_label, target_sc),
+        name = "Target",
+        legendgroup = "Target",
+        marker = list(
+          color = ~bar_color,
+          opacity = 0.2,
+          line = list(color = ~bar_color, width = 1)
+        ),
+        hovertemplate = ~paste0(hover_tgt, "<extra></extra>"),
+        showlegend = FALSE
+      ) %>%
+      add_trace(
+        type = "bar",
+        orientation = "h",
+        x = ~current_sc,
+        y = ~reorder(short_label, target_sc),
+        name = "Current",
+        legendgroup = "Current",
+        marker = list(
+          color = ~bar_color,
+          opacity = 0.8
+        ),
+        hovertemplate = ~paste0(hover_cur, "<extra></extra>"),
+        showlegend = FALSE
+      ) %>%
+      layout(
+        xaxis = list(title = "", zeroline = FALSE),
+        yaxis = list(title = "", tickfont = list(size = 10))
+      )
+    
+    subplot(p1, p2, nrows = 2, margin = 0.08, titleX = FALSE, shareX = FALSE) %>%
+      layout(
+        barmode = "overlay",
+        legend = list(
+          orientation = "h",
+          x = 0.5,
+          xanchor = "center",
+          y = -0.15,
+          groupclick = "togglegroup"
+        ),
+        margin = list(l = 20, r = 20, t = 40, b = 60),
+        annotations = list(
+          list(
+            x = 0, y = 1.05,
+            text = "<b>HLO1: Resilience & Sustainability</b>",
+            showarrow = FALSE,
+            xref = "paper", yref = "paper",
+            xanchor = "left",
+            font = list(size = 12, color = "#27AE60")
+          ),
+          list(
+            x = 0, y = 0.48,
+            text = "<b>HLO2: Productivity & Better Jobs</b>",
+            showarrow = FALSE,
+            xref = "paper", yref = "paper",
+            xanchor = "left",
+            font = list(size = 12, color = "#E67E22")
+          )
+        )
+      )
   })
   
   output$kpi_table <- renderDT({

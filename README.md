@@ -10,6 +10,9 @@ This project implements a layered analytical data warehouse (Bronze / Silver / G
 - [Azerbaijan CPF dashboard: analytical design rationale](#azerbaijan-cpf-dashboard-analytical-design-rationale)
 - [World Bank-style project cycle context](#world-bank-style-project-cycle-context)
 
+**Statistical analysis**
+- [Azerbaijan financial sector analysis notebook](#azerbaijan-financial-sector-analysis-notebook)
+
 **Azerbaijan data layer**
 - [Azerbaijan central bank and official-statistics layer](#azerbaijan-central-bank-and-official-statistics-layer)
 - [Azerbaijan analytical themes: three Gold marts](#azerbaijan-analytical-themes-three-gold-marts)
@@ -105,6 +108,66 @@ The next step is to connect both dashboards to read live from the BigQuery Gold 
 | Negotiation / Approval | Provides structured analytical inputs for documentation |
 | Implementation | Feeds dashboards and periodic monitoring views |
 | Completion / Validation & Evaluation | Supports retrospective indicator-based assessment |
+
+---
+
+## Azerbaijan financial sector analysis notebook
+
+`analysis/wb_aze_cpf_full_analysis.ipynb` is an end-to-end quantitative analysis of Azerbaijan's financial sector, combining macroeconomic KPI design, econometric modelling, machine learning, and cross-country benchmarking. It consumes the Gold-layer CSV outputs produced by the ETL pipeline in this repository.
+
+### Data inputs
+
+| File | Source table | Description |
+|---|---|---|
+| `aze_banking_monthly.csv` | `aze_banking_monthly` | Monthly bank balance sheet: total assets, loans, deposits (74 months) |
+| `aze_interest_rates_periodic.csv` | `aze_interest_rates_periodic` | AZN and FX lending / deposit rates |
+| `aze_policy_rate_monthly.csv` | `aze_policy_rate_monthly` | CBAR refinancing rate and interest rate corridor |
+| `aze_npl_structure_periodic.csv` | `aze_npl_structure_periodic` | Non-performing loan stock by category |
+| `aze_macro_main_periodic.csv` | `aze_macro_main_periodic` | Annual macro indicators: GDP, non-oil GDP, CPI |
+| `global_findex_country_year.csv` | `global_findex_country_year` | World Bank Global Findex: financial inclusion indicators, 160+ countries |
+| `gdp_per_capita_country_year.csv` | `gdp_per_capita_country_year` | World Bank API: GDP per capita, 160+ countries |
+
+### Analysis structure
+
+| Section | Technique | Purpose |
+|---|---|---|
+| 1 | Data loading and feature engineering | LDR, NPL ratio, interest spread, mobile penetration |
+| 2 | KPI design and dashboard | 9-panel banking sector KPI dashboard |
+| 3 | Correlation heatmap | Multicollinearity detection before modelling |
+| 4 | ADF unit root tests | Stationarity check for all candidate regressors |
+| 5 | OLS regression | Drivers of AZN lending rates |
+| 6 | Ridge / Lasso / Elastic Net | Regularisation and variable selection |
+| 7 | Granger causality test | Monetary policy transmission: policy rate → lending rate |
+| 8 | ARIMA forecasting | 12-month forecast of bank loan stock |
+| 9 | Random Forest | Non-linear prediction of month-on-month loan growth |
+| 10 | Panel data regression | Financial inclusion and GDP per capita, 160 countries |
+| 11 | K-Means clustering + PCA | Country financial inclusion profiles |
+| 12 | Bootstrap confidence interval | Distribution-free CI for mean LDR |
+| 13 | Chow structural break test | Impact of the 2015 AZN currency crisis |
+| 14 | KPI scorecard | Traffic-light summary of current sector status |
+| 15 | Summary of findings | Key results across all methods |
+
+### Key findings
+
+| Analysis | Finding |
+|---|---|
+| **OLS (R² = 0.87)** | Deposit rate (β ≈ +0.74\*\*\*) and LDR (β ≈ +0.03\*\*\*) are the primary drivers of lending rates. The policy rate loses significance once deposit rates are controlled for. |
+| **Durbin-Watson ≈ 0.88** | Strong positive serial autocorrelation — production code should use Newey-West standard errors. |
+| **Granger causality** | Policy rate Granger-causes lending rate at lags 1–4 (F = 10.3, 4.4, 2.9, 3.0; all p < 0.05), suggesting a 1–4 month monetary transmission lag. |
+| **ARIMA(3,1,3)** | 12-month hold-out RMSE = 241 mn AZN (MAPE ≈ 0.7%) — strong short-term predictability of the aggregate credit stock. |
+| **Random Forest** | Weak predictive power for month-on-month loan growth (hold-out R² ≈ −0.84); short-run fluctuations are noisy with the current feature set. |
+| **Panel FE** | A 1% rise in GDP per capita is associated with +0.23 ppt higher account ownership within a country (pooled OLS: +0.16 ppt). |
+| **K-Means (K = 2)** | Optimal K = 2 (silhouette = 0.54); Azerbaijan falls in the developing-access cluster alongside other upper-middle income transition economies. |
+| **Bootstrap CI (LDR)** | Mean LDR = 69.5%, 95% CI [68.1%, 70.8%]; latest reading (81.5%) breaches the prudential threshold. |
+| **Chow test** | Structural break confirmed at 2015 (F = 89.7, p < 0.001); post-crisis monetary transmission is noticeably weaker. |
+
+### Methodology notes
+
+- All level-series regressions were preceded by ADF unit-root tests; non-stationary series were first-differenced before Granger testing.
+- TimeSeriesSplit cross-validation was used throughout to prevent look-ahead bias in all ML and regularisation steps.
+- Ridge / Lasso regularisation paths confirm the deposit rate as the dominant, stable predictor across all regularisation levels.
+
+*Data: CBAR Statistical Bulletin, World Bank Global Findex, World Bank API. Tools: Python (statsmodels, scikit-learn, matplotlib, seaborn).*
 
 ---
 
@@ -696,6 +759,8 @@ wb_dev_data_pipeline/
 ├── outputs/
 │   ├── charts/
 │   └── tables/
+├── analysis/
+│   └── wb_aze_cpf_full_analysis.ipynb
 └── .github/
     └── workflows/
         └── ci.yml
@@ -713,6 +778,7 @@ wb_dev_data_pipeline/
 - External-balance and trade structure monitoring
 - Price-level and purchasing-power comparison (Big Mac Index + GDP)
 - Governance and financial-access benchmarking across peer countries
+- Financial sector KPI monitoring and econometric analysis (see `analysis/wb_full_analysis.ipynb`)
 
 ---
 
@@ -723,3 +789,4 @@ wb_dev_data_pipeline/
 - Some bulletin tables mix yearly, quarterly, and monthly structures, so parser maintenance may be needed when the workbook layout changes.
 - Gold marts depend on prior Silver-table creation and consistent `period_date` / `period_type` normalization.
 - The CPF project-cycle dashboard uses manually curated snapshots from the CBAR Statistical Bulletin and CPF document. The CPF analysis dashboard reads directly from pipeline output CSVs and is already connected to the ETL pipeline. Connecting both dashboards to read live from BigQuery Gold marts is the intended next step.
+- The analysis notebook (`analysis/wb_full_analysis.ipynb`) is a point-in-time analysis based on the Gold-layer CSV outputs. Re-running after a pipeline update will automatically reflect the latest data.
