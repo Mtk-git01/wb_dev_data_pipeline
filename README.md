@@ -11,7 +11,8 @@ This project implements a layered analytical data warehouse (Bronze / Silver / G
 - [World Bank-style project cycle context](#world-bank-style-project-cycle-context)
 
 **Statistical analysis**
-- [Azerbaijan financial sector analysis notebook](#azerbaijan-financial-sector-analysis-notebook)
+- [Azerbaijan financial sector analysis notebook](#azerbaijan-financial-sector-analysis-notebook)  
+- Main analysis notebook: [analysis/wb_full_analysis.ipynb](https://github.com/Mtk-git01/wb_dev_data_pipeline/blob/main/analysis/wb_aze_cpf_full_analysis.ipynb)
 
 **Azerbaijan data layer**
 - [Azerbaijan central bank and official-statistics layer](#azerbaijan-central-bank-and-official-statistics-layer)
@@ -146,20 +147,6 @@ The next step is to connect both dashboards to read live from the BigQuery Gold 
 | 13 | Chow structural break test | Impact of the 2015 AZN currency crisis |
 | 14 | KPI scorecard | Traffic-light summary of current sector status |
 | 15 | Summary of findings | Key results across all methods |
-
-### Key findings
-
-| Analysis | Finding |
-|---|---|
-| **OLS (R² = 0.87)** | Deposit rate (β ≈ +0.74\*\*\*) and LDR (β ≈ +0.03\*\*\*) are the primary drivers of lending rates. The policy rate loses significance once deposit rates are controlled for. |
-| **Durbin-Watson ≈ 0.88** | Strong positive serial autocorrelation — production code should use Newey-West standard errors. |
-| **Granger causality** | Policy rate Granger-causes lending rate at lags 1–4 (F = 10.3, 4.4, 2.9, 3.0; all p < 0.05), suggesting a 1–4 month monetary transmission lag. |
-| **ARIMA(3,1,3)** | 12-month hold-out RMSE = 241 mn AZN (MAPE ≈ 0.7%) — strong short-term predictability of the aggregate credit stock. |
-| **Random Forest** | Weak predictive power for month-on-month loan growth (hold-out R² ≈ −0.84); short-run fluctuations are noisy with the current feature set. |
-| **Panel FE** | A 1% rise in GDP per capita is associated with +0.23 ppt higher account ownership within a country (pooled OLS: +0.16 ppt). |
-| **K-Means (K = 2)** | Optimal K = 2 (silhouette = 0.54); Azerbaijan falls in the developing-access cluster alongside other upper-middle income transition economies. |
-| **Bootstrap CI (LDR)** | Mean LDR = 69.5%, 95% CI [68.1%, 70.8%]; latest reading (81.5%) breaches the prudential threshold. |
-| **Chow test** | Structural break confirmed at 2015 (F = 89.7, p < 0.001); post-crisis monetary transmission is noticeably weaker. |
 
 ### Methodology notes
 
