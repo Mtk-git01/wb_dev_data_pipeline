@@ -148,6 +148,11 @@ The next step is to connect both dashboards to read live from the BigQuery Gold 
 | 14 | KPI scorecard | Traffic-light summary of current sector status |
 | 15 | Summary of findings | Key results across all methods |
 
+### Key findings  
+The analysis confirms that deposit market conditions — rather than the CBAR policy rate — are the primary structural driver of AZN lending rates, with a 1–4 month monetary transmission lag confirmed by Granger causality testing.
+A structural break at 2015 (Chow F = 89.7) shows that post-crisis monetary transmission is substantially weaker.
+Full results are documented in Section 15 of the notebook [analysis/wb_full_analysis.ipynb](https://github.com/Mtk-git01/wb_dev_data_pipeline/blob/main/analysis/wb_aze_cpf_full_analysis.ipynb).
+
 ### Methodology notes
 
 - All level-series regressions were preceded by ADF unit-root tests; non-stationary series were first-differenced before Granger testing.
